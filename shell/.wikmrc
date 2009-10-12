@@ -1,0 +1,57 @@
+
+# The following lines are NOT NECESSARY, but you might find them useful
+# Show new files in current project
+alias cvsnew="cvs status | grep ?"
+# Show status of all *not* Up-to-date files
+alias cvsstatus="cvs status | grep Status | grep -v Up"
+# Update the current project
+alias cvsupdate="cvs update -P -C -d"
+
+# You may uncomment the following lines if you want `ls' to be colorized:
+ export LS_OPTIONS='--color=auto'
+ eval "`dircolors`"
+ alias ls='ls $LS_OPTIONS'
+# alias ll='ls $LS_OPTIONS -l'
+# alias l='ls $LS_OPTIONS -lA'
+#
+
+source ~/.twtty
+twtty
+unset twtty
+
+export HISTCONTROL=ignoredups
+export HISTSIZE=2500
+
+x5enc() {
+	# Encode video to run on X5/X5L player
+	# usage: x5enc SOURCE TARGET
+	local in="$1"
+	shift
+	local out="$1"
+	shift
+#	mencoder "$in" -o "$out" -ovc lavc -oac lavc \
+#	-lavcopts acodec=mp3:abitrate=128:vbitrate=128 \
+#	-vf scale=160:-3 -ofps 13 $@
+	mencoder "$in" -o "$out" -ovc lavc -oac lavc \
+	-lavcopts acodec=ac3:abitrate=128:vbitrate=128 \
+	-vf scale=160:-3 -ofps 13 $@
+}
+
+alias qpl='quickplot --line-width=0 --no-points'
+alias qpp='quickplot --no-lines --point-size=1'
+
+export PATH=$PATH:/usr/local/pcaptools/bin/:/usr/local/wireshark-trunk/bin
+
+export EDITOR=vim
+
+Sum() {
+	# ls -al | awk '{sum = sum + $5} END {print sum}'
+	awk '{sum = sum + $1} END {print "Sum: ",sum}'
+}
+
+mp3tom4b() {
+	mpg123 -s "$3" | faac -b 80 -P -X -w -C 1 -o "$4" --title "$2" --writer "$1" --artist "$1" --disc 1 -
+}
+
+
+export LM_LICENSE_FILE="/media/sda1/Program Files/ARM/ADSv1_2/licenses/license.dat"
