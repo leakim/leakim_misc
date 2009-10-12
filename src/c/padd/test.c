@@ -1,0 +1,41 @@
+
+#include <stdint.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <malloc.h>
+
+typedef struct sp_s {
+   uint32_t u32;
+   uint8_t u8;
+   char more[0];
+} __attribute__((__packed__)) sp_t; 
+
+typedef struct s_s {
+   uint32_t u32;
+   uint8_t u8;
+   char more[0];
+} s_t; 
+
+
+int main()
+{
+   s_t s;
+   sp_t sp;
+   s_t *sp_p;
+
+   printf("size: 4+1+0=5==%u\n",sizeof(s));
+   printf("size: 4+1+0=5==%u\n",sizeof(sp));
+
+   printf("offset: 4+1+0=5==%u\n",
+         ((uintptr_t) &sp.more[0] - (uintptr_t)&sp));
+   printf("offset: 4+4+0=5==%u (padding is part of more[0]\n",
+         ((uintptr_t) &s.more[0] - (uintptr_t)&s));
+
+   sp_p = (s_t*)malloc(sizeof(*sp_p)+10);
+   memset(sp_p->more,0,10);
+
+   free(sp_p);
+
+   return 0;
+}
