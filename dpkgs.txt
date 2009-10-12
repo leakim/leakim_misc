@@ -1,0 +1,7 @@
+iproute tofrodos
+smbfs smbclient samba-tools
+build-essential bin86 gcc-3.4 
+gsl-bin gnuplot quickplot
+madwifi-tools
+sshfs
+
