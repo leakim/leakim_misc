@@ -1,0 +1,5 @@
+client.conf    AP conf
+eap.conf       EAP Methods
+users          users that are to be clients (u/p)
+
+cd certs
