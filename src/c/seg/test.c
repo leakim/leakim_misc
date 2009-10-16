@@ -5,6 +5,12 @@
 #include <string.h>
 #include <malloc.h>
 
+/* 
+ * http://www.ohse.de/uwe/articles/gcc-attributes.html#func-section 
+ *
+ * http://www.esacademy.com/automation/docs/c51primer/c08.htm
+ */
+
 typedef struct sp_s {
    uint32_t u32;
    uint8_t u8;
