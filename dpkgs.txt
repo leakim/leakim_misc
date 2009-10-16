@@ -1,7 +1,10 @@
-iproute tofrodos
+#!/bin/bash
+dpkg --get-selections | grep -v -e "deinstall" -e "remove" | awk '{print "apt-get install " $1}'
+
+openssh-server openssh-client mc sshfs iproute tofrodos
 smbfs smbclient samba-tools
-build-essential bin86 gcc-3.4 
+build-essential bin86 bison flex gcc-3.4 
 gsl-bin gnuplot quickplot
 madwifi-tools
-sshfs
+libssl-dev 
 
