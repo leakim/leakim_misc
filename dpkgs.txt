@@ -7,4 +7,4 @@ build-essential bin86 bison flex gcc-3.4
 gsl-bin gnuplot quickplot
 madwifi-tools
 libssl-dev 
-
+seahorse gpa openvpn
