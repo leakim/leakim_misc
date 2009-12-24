@@ -5,6 +5,12 @@ openssh-server openssh-client mc sshfs iproute tofrodos
 smbfs smbclient samba-tools
 build-essential bin86 bison flex gcc-3.4 
 gsl-bin gnuplot quickplot
-madwifi-tools
 libssl-dev 
+fdupes
+subversion gitk git-svn meld colordiff p7zip-rar p7zip-full 
+unalz gqview 
+wireshark tshark
+liblist-moreutils-perl moreutils
+seahorse gpa openvpn
 
+#madwifi-tools
