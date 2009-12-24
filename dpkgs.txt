@@ -10,6 +10,7 @@ fdupes
 subversion gitk git-svn meld colordiff p7zip-rar p7zip-full 
 unalz gqview 
 wireshark tshark
+liblist-moreutils-perl moreutils
 
 apt-get install seahorse gpa openvpn
 
