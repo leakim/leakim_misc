@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
-#include <malloc.h>
+#include <malloc.h> 
+
 
 typedef struct sp_s {
    uint32_t u32;
@@ -17,6 +18,19 @@ typedef struct s_s {
    char more[0];
 } s_t; 
 
+typedef struct s_unaligned_
+{
+   char m1_c; /* unaligned */
+   int  m2_i;
+   char m3_c; /* unaligned */
+} s_unaligned;
+
+typedef struct s_with_unaligned_s_array_
+{
+   char m1_c; /* unaligned */
+   int  m2_count;
+   s_unaligned m3_unaligned_s[1]; /* growable */
+} s_with_unaligned_s_array;
 
 int main()
 {
@@ -36,6 +50,20 @@ int main()
    memset(sp_p->more,0,10);
 
    free(sp_p);
+
+   printf("-------------\n");
+
+   printf("size of member %s: 1+4+1=6 or 4+4+4=12 ? Z=%u\n", 
+      "s_unaligned", 
+      sizeof(s_unaligned));
+
+   printf("size of %s: 1+4+Z or 4+4+Z? Y=%u\n", 
+         "s_with_unaligned_s_array",
+         sizeof(s_with_unaligned_s_array));
+
+   printf("size of %s: with 3 members? 1+4+2*Y or 4+4+2*Y? X=%u\n", 
+         "s_with_unaligned_s_array",
+         sizeof(s_with_unaligned_s_array) +  (3-1)*sizeof(s_unaligned));
 
    return 0;
 }
