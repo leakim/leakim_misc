@@ -1,16 +1,27 @@
 #!/bin/bash
 dpkg --get-selections | grep -v -e "deinstall" -e "remove" | awk '{print "apt-get install " $1}'
 
-openssh-server openssh-client mc sshfs iproute tofrodos
 smbfs smbclient samba-tools
-build-essential bin86 bison flex gcc-3.4 
 gsl-bin gnuplot quickplot
 libssl-dev 
 fdupes
-subversion gitk git-svn meld colordiff p7zip-rar p7zip-full 
 unalz gqview 
 wireshark tshark
 liblist-moreutils-perl moreutils
 seahorse gpa openvpn
+ruby ri
+graphviz
+
+#must have
+vim vim-scripts agrep ncftp mc
+openssh-server openssh-client sshfs iproute tofrodos
+
+#build linux kernel 
+fakeroot kernel-wedge build-essential makedumpfile kernel-package
+bin86 bison flex
+
+#dev
+subversion gitk git-svn meld colordiff p7zip-rar p7zip-full 
+exuberant-ctags ctags cscope cbrowser valgrind valkyrie kdbg duma
 
 #madwifi-tools
