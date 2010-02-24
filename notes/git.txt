@@ -1,0 +1,18 @@
+
+ssh test
+--------
+ssh git@github.com
+
+download
+--------
+?
+
+upload
+------
+git push origin master
+
+
+resolve merge conflict
+----------------------
+git commit (in dir, no args)
+
