@@ -1,0 +1,16 @@
+
+
+HTC Desire
+----------
+
+time ffmpeg -v 0 -i *v -acodec libfaac -ab 96k -ac 1 -s 800x480 \
+        -vcodec libx264 -vpre hq -vpre ipod320 -b 400K -bt 400K \
+        -metadata "title=Video that can be played on my HTC Desire" \
+        -threads 0 -f ipod /tmp/out.mp4
+
+
+Video split (warning: not always lossless, endposs is relative to start)
+-----------
+mencoder -ss 01:30:24 -oac copy -ovc copy in.avi -o out.avi
+mencoder -endpos hh:mm:ss -ovc copy -oac copy in.avi -o out.avi
+

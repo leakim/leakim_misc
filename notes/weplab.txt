@@ -1,0 +1,5 @@
+weplab -i wlan0 -c file.cap
+weplab -a file.cap
+john -i -stdout | weplab -y file.cap
+weplab -r file.cap
+
