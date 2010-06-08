@@ -16,12 +16,43 @@ graphviz
 vim vim-scripts agrep ncftp mc
 openssh-server openssh-client sshfs iproute tofrodos
 
+#usefull
+jhead xawtv
+
+#usefull on netbooks
+#kmag
+
 #build linux kernel 
 fakeroot kernel-wedge build-essential makedumpfile kernel-package
-bin86 bison flex
+bin86 bison flex ncurses-dev
 
 #dev
-subversion gitk git-svn meld colordiff p7zip-rar p7zip-full 
-exuberant-ctags ctags cscope cbrowser valgrind valkyrie kdbg duma
+subversion gitk git-svn meld p7zip-rar p7zip-full easygit 
+exuberant-ctags ctags cscope cbrowser valgrind valkyrie kdbg duma astyle
+cflow
+
+#eval
 
 #madwifi-tools
+
+autoconf automake autotools-dev cmake gnu-standards libtool
+
+iperf curl 
+
+ethtool
+
+gimp
+
+gparted
+
+#kpowersave
+
+vlc
+
+skype
+
+# colors and logs
+colordiff colorgcc colormake colortail lwatch supercat
+
+filezilla
+
