@@ -13,7 +13,7 @@ ruby ri
 graphviz
 
 #must have
-vim vim-scripts agrep ncftp mc
+vim vim-scripts agrep ncftp mc pv
 openssh-server openssh-client sshfs iproute tofrodos
 
 #usefull
