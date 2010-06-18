@@ -2,6 +2,7 @@
 # input
 INTERFACE=$1
 CHANNEL=$2
+OUTFILE="$3"
 
 if [ "x$INTERFACE" == "x" ]; then
 	INTERFACE=wlan0
@@ -18,6 +19,12 @@ sudo ifconfig $INTERFACE down
 sudo iwconfig $INTERFACE mode monitor
 sudo iwconfig $INTERFACE channel $CHANNEL
 sudo ifconfig $INTERFACE up
-sudo tshark -i $INTERFACE -w /tmp/air.pcap
-sudo chown miwi.miwi /tmp/air.pcap 
-wireshark /tmp/air.pcap 
+
+if [ "x$OUTFILE" == "x" ]; then
+   sudo wireshark -i $INTERFACE
+else
+   sudo tshark -i $INTERFACE -w "$OUTFILE"
+   sudo chown miwi.miwi "$OUTFILE"
+   wireshark "$OUTFILE"
+fi
+
