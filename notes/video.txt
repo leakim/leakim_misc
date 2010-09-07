@@ -1,0 +1,25 @@
+
+
+HTC Desire
+----------
+
+time ffmpeg -v 0 -i *v -acodec libfaac -ab 96k -ac 1 -s 800x480 \
+        -vcodec libx264 -vpre hq -vpre ipod320 -b 400K -bt 400K \
+        -metadata "title=Video that can be played on my HTC Desire" \
+        -threads 0 -f ipod /tmp/out.mp4
+
+From Ixus 850 to HTC Desire
+---------------------------
+
+time for N in *.AVI ; do 
+time ffmpeg -v 0 -i $N -acodec libfaac -ar 11024 -ac 1 -s 640x480 \
+             -vcodec libx264 -vpre hq -vpre ipod320 -b 1200K \
+             -metadata "title=Jycklare" \
+             -threads 0 -f ipod $N.m4v ; done
+
+
+Video split (warning: not always lossless, endposs is relative to start)
+-----------
+mencoder -ss 01:30:24 -oac copy -ovc copy in.avi -o out.avi
+mencoder -endpos hh:mm:ss -ovc copy -oac copy in.avi -o out.avi
+

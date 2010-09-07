@@ -1,0 +1,25 @@
+
+shrink image (windows)
+------------
+defrag
+install sdelete http://technet.microsoft.com/en-us/sysinternals/bb897443.aspx
+SDelete -c c:
+
+shrink image (linux)
+-----
+sudo apt-get zerofree
+reboot into recovery mode
+mount -n -o remount,ro -t ext3 /dev/sda1 /
+zerofree /dev/sda1
+shutdown -h now
+
+shrink image
+-----
+time VBoxManage modifyhd WinXP.vdi --compact
+or
+VBoxManage clonehd WinXP.vdi WinXP_clone.vdi --format VDI 
+
+Change Disk UUID
+----------------
+VBoxManage internalcommands setvdiuuid WinXP.vdi
+

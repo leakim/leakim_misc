@@ -1,0 +1,12 @@
+
+init/main.c:start_kernel()
+--------------------------
+
+dmesg /proc/kmsg
+----------------
+dmesg -s power_of_two
+log_buf_len=power_of_two (not tested)
+kernel/printk.c
+include/linux/autoconf.h
+CONFIG_LOG_BUF_SHIFT 17
+
