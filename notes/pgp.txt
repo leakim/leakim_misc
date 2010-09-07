@@ -1,9 +1,0 @@
-To encrypt a file, use:
-gpg -r NAME --output OUTFILE.gpg --encrypt INFILE
-
-To decrypt a file, use:
-gpg -r NAME --output OUTFILE --decrypt INFILE.gpg
-
-To decrypt a file with an external key ring, run:
-gpg --secret-keyring KEYRING -o OUTFILE --decrypt INFILE
-
