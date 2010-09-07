@@ -2,7 +2,7 @@
 
 # input
 INTERFACE=wlan0
-SSID=$1
+SSID="$1"
 
 if [ "x$SSID" == "x" ]; then
 	echo "no ssid provided; exiting"
@@ -20,5 +20,5 @@ if [ "$MMODE" == "1" ]; then
 	sudo ifconfig $INTERFACE up
 fi
 
-sudo iwlist $INTERFACE scan
+sudo iwlist $INTERFACE scan | agrep -d 'Cell ' $SSID
 
