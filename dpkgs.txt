@@ -12,5 +12,9 @@ unalz gqview
 wireshark tshark
 liblist-moreutils-perl moreutils
 seahorse gpa openvpn
+agrep
+netcat mz
 
 #madwifi-tools
+exuberant-ctags 
+
