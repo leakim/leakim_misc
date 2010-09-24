@@ -1,0 +1,13 @@
+awk --non-decimal-data '{printf("%d\n", ("0x"$1) ) }'
+
+while read a b
+do
+  printf "%5d %5d\n" "0x$a" "0x$b" 
+done 
+
+echo 0xa | xargs printf "%d\n"
+
+perl -pi -e 'printf ("%d", $_);' file 
+
+
+
