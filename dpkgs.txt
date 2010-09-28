@@ -30,6 +30,7 @@ bin86 bison flex ncurses-dev
 subversion gitk git-svn meld p7zip-rar p7zip-full easygit 
 exuberant-ctags ctags cscope cbrowser valgrind valkyrie kdbg duma astyle
 cflow
+kdiff3
 
 #eval
 
