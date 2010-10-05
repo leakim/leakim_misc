@@ -1,0 +1,7 @@
+shead
+
+How do make a binary file into a char array
+-------------------------------------------
+xxd -i -c 8 /tmp/x_mac.bin > file_with_char_array.c
+
+
