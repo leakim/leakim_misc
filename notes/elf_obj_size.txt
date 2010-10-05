@@ -1,0 +1,9 @@
+
+objdump -t test.o | awk --non-decimal-data '($4==".text"){printf("%d %s\n","0x"$5,$6)}' | sort -n
+
+nm -S obj/test | grep wei_ | awk --non-decimal-data '{printf("%d %s\n", "0x" $2, $4 )}' | sort -n
+
+find . -name "*.o" | while read LINE ; do 
+   echo $LINE `objdump -t $LINE | awk --non-decimal-data '($4==".text"){printf("%d %s\n","0x"$5,"")}' | sort -n | Sum `
+done | sort -n -k 3
+
