@@ -1,0 +1,19 @@
+
+generic structure
+
+awk 'BEGIN{}{ printf "%s ", $0 } }END{printf "\n"}'
+
+remove '\n' based on regexp
+
+awk 'if ( $0 ~ /dl_main.c:393/ ) { printf "%s", $0 } else {printf "%s\n", $0}'
+
+shell variables
+
+VAR=foo
+awk -v myvar=$VAR
+
+function Sum() {
+	# ls -al | awk '{sum = sum + $5} END {print sum}'
+	awk '{sum = sum + $1} END {print "Sum: ",sum}'
+}
+
