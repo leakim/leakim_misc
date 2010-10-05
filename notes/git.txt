@@ -47,4 +47,13 @@ git config --global color.branch auto
 git config --global user.name "Your Name Comes Here"
 git config --global user.email you@yourdomain.example.com
 
+reverting
+---------
+git checkout -b revert-rm-on-20090907 master (create and move to new branch)
+git show-branch --more=6 master master (show last commits)
+git revert -n master~4 (revert name of commit shown by prev command)
+git diff HEAD
+git commit -a (is all ok now)
+git checkout master (move back to master)
+git merge revert-rm-on-20090907 (move revert back to master)
 
