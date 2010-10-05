@@ -15,4 +15,36 @@ git push origin master
 resolve merge conflict
 ----------------------
 git commit (in dir, no args)
+git apply
+git cherry-pick rev
+git merge branch
+git branch (list branches)
+
+update
+------
+git fetch 
+git log origin
+git log HEAD..origin
+git merge origin
+
+same as
+
+git pull
+
+history
+-------
+git log
+git blame
+git log origin
+git log HEAD..origin
+
+other usefull stuff
+-------------------
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto
+
+git config --global user.name "Your Name Comes Here"
+git config --global user.email you@yourdomain.example.com
+
 
