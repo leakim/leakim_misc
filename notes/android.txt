@@ -1,0 +1,6 @@
+
+ubuntu+jdk6
+-----------
+http://developer.android.com/sdk/installing.html
+
+
