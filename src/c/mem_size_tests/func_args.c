@@ -19,8 +19,8 @@ void func_arg(s_t s)
     * s will reside on the stack and will be a separate copy
     * the variable assignment will not remain after return; 
     */
-   s.a = 3;
-   s.b = 4;
+   s.a = 0x03030303;
+   s.b = 0x04040404;
    return;
 }
 
@@ -31,8 +31,8 @@ void func_p_arg(s_t *s)
     * asignment using pointers takes more spaces as addr's
     * have to be loaded into registeres before assignment
     */
-   s->a = 5;
-   s->b = 6;
+   s->a = 0x05050505;
+   s->b = 0x06060606;
    return;
 }
 
@@ -40,13 +40,13 @@ int main()
 {
    s_t s = {1,2};
 
-   printf("a: %d b: %d\n",s.a, s.b);
+   printf("a: %x b: %x\n",s.a, s.b);
 
    func_arg(s);
-   printf("a: %d b: %d (after func_arg)\n",s.a, s.b);
+   printf("a: %x b: %x (after func_arg)\n",s.a, s.b);
 
    func_p_arg(&s);
-   printf("a: %d b: %d after (func_p_arg)\n",s.a, s.b);
+   printf("a: %x b: %x after (func_p_arg)\n",s.a, s.b);
 
    return 0;
 }

@@ -3,12 +3,15 @@
 CFLAGS=-g -Wall
 LDFLAGS=-g
 
-all: func_args run
+all: func_args run func_args_c_asm
 
 clean:
-	rm *.o func_args
+	rm *.o func_args *.lst
 
 func_args: func_args.o
+
+func_args_c_asm:
+	gcc -c -g -Wa,-a,-ad func_args.c > func_args.lst
 
 run: 
 	./func_args && \
