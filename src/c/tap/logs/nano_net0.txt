@@ -1,0 +1,49 @@
+cc -g -Wall   -c -o test.o test.c
+cc -g  test.o tun_dev.o printbuf.o   -o test
+./test
+fd: 3 dev nano_net0
+size: 90
+rx: : 0000 : 33 33 00 00 00 16 da aa 50 63 5d bf 86 dd 60 00 : 33......Pc]...`.
+rx: : 0010 : 00 00 00 24 00 01 00 00 00 00 00 00 00 00 00 00 : ...$............
+wrote: 90
+.
+size: 78
+rx: : 0000 : 33 33 ff 63 5d bf da aa 50 63 5d bf 86 dd 60 00 : 33.c]...Pc]...`.
+rx: : 0010 : 00 00 00 18 3a ff 00 00 00 00 00 00 00 00 00 00 : ....:...........
+wrote: 78
+........
+size: 90
+rx: : 0000 : 33 33 00 00 00 16 da aa 50 63 5d bf 86 dd 60 00 : 33......Pc]...`.
+rx: : 0010 : 00 00 00 24 00 01 00 00 00 00 00 00 00 00 00 00 : ...$............
+wrote: 90
+size: 42
+rx: : 0000 : ff ff ff ff ff ff da aa 50 63 5d bf 08 06 00 01 : ........Pc].....
+rx: : 0010 : 08 00 06 04 00 01 da aa 50 63 5d bf c0 a8 e7 6d : ........Pc]....m
+wrote: 42
+.
+size: 42
+rx: : 0000 : ff ff ff ff ff ff da aa 50 63 5d bf 08 06 00 01 : ........Pc].....
+rx: : 0010 : 08 00 06 04 00 01 da aa 50 63 5d bf c0 a8 e7 6d : ........Pc]....m
+wrote: 42
+.
+size: 42
+rx: : 0000 : ff ff ff ff ff ff da aa 50 63 5d bf 08 06 00 01 : ........Pc].....
+rx: : 0010 : 08 00 06 04 00 01 da aa 50 63 5d bf c0 a8 e7 6d : ........Pc]....m
+wrote: 42
+.............
+size: 42
+rx: : 0000 : ff ff ff ff ff ff da aa 50 63 5d bf 08 06 00 01 : ........Pc].....
+rx: : 0010 : 08 00 06 04 00 01 da aa 50 63 5d bf c0 a8 e7 6d : ........Pc]....m
+wrote: 42
+.
+size: 42
+rx: : 0000 : ff ff ff ff ff ff da aa 50 63 5d bf 08 06 00 01 : ........Pc].....
+rx: : 0010 : 08 00 06 04 00 01 da aa 50 63 5d bf c0 a8 e7 6d : ........Pc]....m
+wrote: 42
+.
+size: 42
+rx: : 0000 : ff ff ff ff ff ff da aa 50 63 5d bf 08 06 00 01 : ........Pc].....
+rx: : 0010 : 08 00 06 04 00 01 da aa 50 63 5d bf c0 a8 e7 6d : ........Pc]....m
+wrote: 42
+
+

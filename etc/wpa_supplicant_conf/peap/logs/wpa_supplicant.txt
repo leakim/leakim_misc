@@ -1,0 +1,593 @@
+Initializing interface 'ath0' conf 'miwiDIR655-ttls.conf' driver 'wext' ctrl_interface 'N/A' bridge 'N/A'
+Configuration file 'miwiDIR655-ttls.conf' -> '/home/nanoradio/miwi/miwiDIR655-ttls.conf'
+Reading configuration file '/home/nanoradio/miwi/miwiDIR655-ttls.conf'
+ctrl_interface='/var/run/wpa_supplicant'
+Line: 5 - start of a new network block
+ssid - hexdump_ascii(len=10):
+     6d 69 77 69 44 49 52 36 35 35                     miwiDIR655      
+key_mgmt: 0x1
+proto: 0x2
+pairwise: 0x10
+group: 0x10
+eap methods - hexdump(len=16): 00 00 00 00 19 00 00 00 00 00 00 00 00 00 00 00
+phase2 - hexdump_ascii(len=13):
+     61 75 74 68 3d 4d 53 43 48 41 50 56 32            auth=MSCHAPV2   
+identity - hexdump_ascii(len=4):
+     75 73 65 72                                       user            
+password - hexdump_ascii(len=6):
+     70 61 73 73 77 64                                 passwd          
+Priority group 0
+   id=0 ssid='miwiDIR655'
+Initializing interface (2) 'ath0'
+Interface ath0 set UP - waiting a second for the driver to complete initialization
+SIOCGIWRANGE: WE(compiled)=22 WE(source)=13 enc_capa=0xf
+  capabilities: key_mgmt 0xf enc 0xf flags 0x0
+WEXT: Operstate: linkmode=1, operstate=5
+Own MAC address: 00:0f:b5:0d:da:c5
+wpa_driver_wext_set_wpa
+wpa_driver_wext_set_key: alg=0 key_idx=0 set_tx=0 seq_len=0 key_len=0
+wpa_driver_wext_set_key: alg=0 key_idx=1 set_tx=0 seq_len=0 key_len=0
+wpa_driver_wext_set_key: alg=0 key_idx=2 set_tx=0 seq_len=0 key_len=0
+wpa_driver_wext_set_key: alg=0 key_idx=3 set_tx=0 seq_len=0 key_len=0
+wpa_driver_wext_set_countermeasures
+wpa_driver_wext_set_drop_unencrypted
+RSN: flushing PMKID list in the driver
+Setting scan request: 0 sec 100000 usec
+EAPOL: SUPP_PAE entering state DISCONNECTED
+EAPOL: KEY_RX entering state NO_KEY_RECEIVE
+EAPOL: SUPP_BE entering state INITIALIZE
+EAP: EAP entering state DISABLED
+Added interface ath0
+Ignore event for foreign ifindex 6
+RTM_NEWLINK: operstate=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK, IFLA_IFNAME: Interface 'ath0' added
+RTM_NEWLINK: operstate=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK, IFLA_IFNAME: Interface 'ath0' added
+Wireless event: cmd=0x8b06 len=8
+State: DISCONNECTED -> SCANNING
+Starting AP scan (broadcast SSID)
+Trying to get current scan results first without requesting a new scan to speed up initial association
+Received 1336 bytes of scan results (6 BSSes)
+CTRL-EVENT-SCAN-RESULTS 
+Selecting BSS from priority group 0
+Try to find WPA-enabled AP
+0: 00:1d:7e:90:8a:71 ssid='T3test' wpa_ie_len=22 rsn_ie_len=0 caps=0x11
+   skip - SSID mismatch
+1: 00:1c:10:c4:1f:e6 ssid='_nano_pk' wpa_ie_len=0 rsn_ie_len=20 caps=0x11
+   skip - SSID mismatch
+2: 00:90:4c:91:00:01 ssid='SignalHill' wpa_ie_len=0 rsn_ie_len=0 caps=0x11
+   skip - no WPA/RSN IE
+3: 00:16:b6:d9:ac:ec ssid='fett' wpa_ie_len=0 rsn_ie_len=0 caps=0x1
+   skip - no WPA/RSN IE
+4: 00:0f:b5:ca:6c:12 ssid='NETGEAR' wpa_ie_len=0 rsn_ie_len=0 caps=0x1
+   skip - no WPA/RSN IE
+5: 00:1d:60:37:23:81 ssid='openwrt' wpa_ie_len=0 rsn_ie_len=0 caps=0x1
+   skip - no WPA/RSN IE
+Try to find non-WPA AP
+0: 00:1d:7e:90:8a:71 ssid='T3test' wpa_ie_len=22 rsn_ie_len=0 caps=0x11
+   skip - SSID mismatch
+1: 00:1c:10:c4:1f:e6 ssid='_nano_pk' wpa_ie_len=0 rsn_ie_len=20 caps=0x11
+   skip - SSID mismatch
+2: 00:90:4c:91:00:01 ssid='SignalHill' wpa_ie_len=0 rsn_ie_len=0 caps=0x11
+   skip - SSID mismatch
+3: 00:16:b6:d9:ac:ec ssid='fett' wpa_ie_len=0 rsn_ie_len=0 caps=0x1
+   skip - SSID mismatch
+4: 00:0f:b5:ca:6c:12 ssid='NETGEAR' wpa_ie_len=0 rsn_ie_len=0 caps=0x1
+   skip - SSID mismatch
+5: 00:1d:60:37:23:81 ssid='openwrt' wpa_ie_len=0 rsn_ie_len=0 caps=0x1
+   skip - SSID mismatch
+No suitable AP found.
+Setting scan request: 0 sec 0 usec
+Starting AP scan (broadcast SSID)
+Scan requested (ret=0) - scan timeout 5 seconds
+EAPOL: disable timer tick
+Scan timeout - try to get results
+Received 2444 bytes of scan results (10 BSSes)
+CTRL-EVENT-SCAN-RESULTS 
+Selecting BSS from priority group 0
+Try to find WPA-enabled AP
+0: 00:1e:58:ea:8f:4f ssid='miwiDIR655' wpa_ie_len=0 rsn_ie_len=20 caps=0x11
+   selected based on RSN IE
+   selected WPA AP 00:1e:58:ea:8f:4f ssid='miwiDIR655'
+Try to find non-WPA AP
+Trying to associate with 00:1e:58:ea:8f:4f (SSID='miwiDIR655' freq=2452 MHz)
+Cancelling scan request
+WPA: clearing own WPA/RSN IE
+Automatic auth_alg selection: 0x1
+RSN: using IEEE 802.11i/D9.0
+WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 1 proto 2
+WPA: clearing AP WPA IE
+WPA: set AP RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00
+WPA: using GTK CCMP
+WPA: using PTK CCMP
+WPA: using KEY_MGMT 802.1X
+WPA: not using MGMT group cipher
+WPA: Set own WPA IE default - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00
+No keys have been configured - skip key clearing
+wpa_driver_wext_set_drop_unencrypted
+State: SCANNING -> ASSOCIATING
+wpa_driver_wext_set_operstate: operstate 0->0 (DORMANT)
+WEXT: Operstate: linkmode=-1, operstate=5
+wpa_driver_wext_associate
+wpa_driver_wext_set_psk
+Setting authentication timeout: 10 sec 0 usec
+EAPOL: External notification - portControl=Auto
+RSN: Ignored PMKID candidate without preauth flag
+RTM_NEWLINK: operstate=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK, IFLA_IFNAME: Interface 'ath0' added
+Wireless event: cmd=0x8b06 len=8
+RTM_NEWLINK: operstate=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK, IFLA_IFNAME: Interface 'ath0' added
+Wireless event: cmd=0x8b04 len=12
+RTM_NEWLINK: operstate=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK, IFLA_IFNAME: Interface 'ath0' added
+Wireless event: cmd=0x8b19 len=8
+Received 2444 bytes of scan results (10 BSSes)
+CTRL-EVENT-SCAN-RESULTS 
+Selecting BSS from priority group 0
+Try to find WPA-enabled AP
+0: 00:1e:58:ea:8f:4f ssid='miwiDIR655' wpa_ie_len=0 rsn_ie_len=20 caps=0x11
+   selected based on RSN IE
+   selected WPA AP 00:1e:58:ea:8f:4f ssid='miwiDIR655'
+Try to find non-WPA AP
+Already associated with the selected AP.
+RSN: Ignored PMKID candidate without preauth flag
+Authentication with 00:1e:58:ea:8f:4f timed out.
+Added BSSID 00:1e:58:ea:8f:4f into blacklist
+No keys have been configured - skip key clearing
+State: ASSOCIATING -> DISCONNECTED
+wpa_driver_wext_set_operstate: operstate 0->0 (DORMANT)
+WEXT: Operstate: linkmode=-1, operstate=5
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+Setting scan request: 0 sec 0 usec
+State: DISCONNECTED -> SCANNING
+Starting AP scan (broadcast SSID)
+Scan requested (ret=0) - scan timeout 30 seconds
+RTM_NEWLINK: operstate=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK, IFLA_IFNAME: Interface 'ath0' added
+Wireless event: cmd=0x8b19 len=8
+Received 2648 bytes of scan results (11 BSSes)
+CTRL-EVENT-SCAN-RESULTS 
+Selecting BSS from priority group 0
+Try to find WPA-enabled AP
+0: 00:1e:58:ea:8f:4f ssid='miwiDIR655' wpa_ie_len=0 rsn_ie_len=20 caps=0x11
+   selected based on RSN IE
+   selected WPA AP 00:1e:58:ea:8f:4f ssid='miwiDIR655'
+Try to find non-WPA AP
+Trying to associate with 00:1e:58:ea:8f:4f (SSID='miwiDIR655' freq=2452 MHz)
+Cancelling scan request
+WPA: clearing own WPA/RSN IE
+Automatic auth_alg selection: 0x1
+RSN: using IEEE 802.11i/D9.0
+WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 1 proto 2
+WPA: clearing AP WPA IE
+WPA: set AP RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00
+WPA: using GTK CCMP
+WPA: using PTK CCMP
+WPA: using KEY_MGMT 802.1X
+WPA: not using MGMT group cipher
+WPA: Set own WPA IE default - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00
+No keys have been configured - skip key clearing
+wpa_driver_wext_set_drop_unencrypted
+State: SCANNING -> ASSOCIATING
+wpa_driver_wext_set_operstate: operstate 0->0 (DORMANT)
+WEXT: Operstate: linkmode=-1, operstate=5
+wpa_driver_wext_associate
+wpa_driver_wext_set_psk
+Setting authentication timeout: 10 sec 0 usec
+EAPOL: External notification - portControl=Auto
+RSN: Ignored PMKID candidate without preauth flag
+RTM_NEWLINK: operstate=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK, IFLA_IFNAME: Interface 'ath0' added
+Wireless event: cmd=0x8b06 len=8
+RTM_NEWLINK: operstate=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK, IFLA_IFNAME: Interface 'ath0' added
+Wireless event: cmd=0x8b04 len=12
+RTM_NEWLINK: operstate=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK, IFLA_IFNAME: Interface 'ath0' added
+Wireless event: cmd=0x8b15 len=20
+Wireless event: new AP: 00:1e:58:ea:8f:4f
+State: ASSOCIATING -> ASSOCIATED
+wpa_driver_wext_set_operstate: operstate 0->0 (DORMANT)
+WEXT: Operstate: linkmode=-1, operstate=5
+Associated to a new BSS: BSSID=00:1e:58:ea:8f:4f
+No keys have been configured - skip key clearing
+Associated with 00:1e:58:ea:8f:4f
+WPA: Association event - clear replay counter
+WPA: Clear old PTK
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+EAPOL: External notification - portEnabled=1
+EAPOL: SUPP_PAE entering state CONNECTING
+EAPOL: enable timer tick
+EAPOL: SUPP_BE entering state IDLE
+EAP: EAP entering state INITIALIZE
+EAP: EAP entering state IDLE
+Setting authentication timeout: 10 sec 0 usec
+Cancelling scan request
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=9): 01 00 00 05 01 03 00 05 01
+Setting authentication timeout: 70 sec 0 usec
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_PAE entering state RESTART
+EAP: EAP entering state INITIALIZE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_PAE entering state AUTHENTICATING
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=3 method=1 vendor=0 vendorMethod=0
+EAP: EAP entering state IDENTITY
+CTRL-EVENT-EAP-STARTED EAP authentication started
+EAP: EAP-Request Identity data - hexdump_ascii(len=0):
+EAP: using real identity - hexdump_ascii(len=4):
+     75 73 65 72                                       user            
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=13): 01 00 00 09 02 03 00 09 01 75 73 65 72
+EAPOL: SUPP_BE entering state RECEIVE
+RTM_NEWLINK: operstate=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK, IFLA_IFNAME: Interface 'ath0' added
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=26): 01 00 00 16 01 04 00 16 04 10 0d a7 2a 0c d0 da 07 9a d7 b5 1e fd a5 85 73 27
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=4 method=4 vendor=0 vendorMethod=0
+EAP: EAP entering state GET_METHOD
+EAP: configuration does not allow: vendor 0 method 4
+EAP: vendor 0 method 4 not allowed
+EAP: Building EAP-Nak (requested type 4 vendor=0 method=0 not allowed)
+EAP: allowed methods - hexdump(len=1): 19
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=10): 01 00 00 06 02 04 00 06 03 19
+EAPOL: SUPP_BE entering state RECEIVE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=10): 01 00 00 06 01 05 00 06 19 20
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=5 method=25 vendor=0 vendorMethod=0
+EAP: EAP entering state GET_METHOD
+EAP: Initialize selected EAP method: vendor 0 method 25 (PEAP)
+TLS: Phase2 EAP types - hexdump(len=8): 00 00 00 00 1a 00 00 00
+CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+EAP: EAP entering state METHOD
+SSL: Received packet(len=6) - Flags 0x20
+EAP-PEAP: Start (server ver=0, own ver=1)
+EAP-PEAP: Using PEAP version 0
+SSL: (where=0x10 ret=0x1)
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:before/connect initialization
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:SSLv3 write client hello A
+SSL: (where=0x1002 ret=0xffffffff)
+SSL: SSL_connect:error in SSLv3 read server hello A
+SSL: SSL_connect - want more data
+SSL: 93 bytes pending from ssl_out
+SSL: 93 bytes left to be sent out (of total 93 bytes)
+EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=103): 01 00 00 63 02 05 00 63 19 00 16 03 01 00 58 01 00 00 54 03 01 4a d7 1e 7b 9e 48 ff b3 c1 2d c5 95 a6 6c 3a 55 23 e8 d2 dc b8 40 55 91 56 2c 2c cf 93 b2 11 7f 00 00 26 00 39 00 38 00 35 00 16 00 13 00 0a 00 33 00 32 00 2f 00 05 00 04 00 15 00 12 00 09 00 14 00 11 00 08 00 06 00 03 02 01 00 00 04 00 23 00 00
+EAPOL: SUPP_BE entering state RECEIVE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=1028): 01 00 04 00 01 06 04 00 19 c0 00 00 0a cb 16 03 01 00 30 02 00 00 2c 03 01 4a d7 1e a1 c2 41 2a 79 d8 ec b9 66 d9 23 2c 6b e8 ca 7a 7c 2d e3 a1 43 c3 7b d8 b8 80 bb 1d 16 00 00 39 01 00 04 00 23 00 00 16 03 01 08 76 0b 00 08 72 00 08 6f 00 03 b2 30 82 03 ae 30 82 02 96 a0 03 02 01 02 02 01 01 30 0d 06 09 2a 86 48 86 f7 0d 01 01 04 05 00 30 81 97 31 0b 30 09 06 03 55 04 06 13 02 46 52 31 0f 30 0d 06 03 55 04 08 13 06 52 61 64 69 75 73 31 12 30 10 06 03 55 04 07 13 09 53 6f 6d 65 77 68 65 72 65 31 12 30 10 06 03 55 04 0a 13 09 4e 61 6e 6f 72 61 64 69 6f 31 2c 30 2a 06 09 2a 86 48 86 f7 0d 01 09 01 16 1d 6d 69 6b 61 65 6c 2e 77 69 6b 73 74 72 6f 6d 40 6e 61 6e 6f 72 61 64 69 6f 2e 63 6f 6d 31 21 30 1f 06 03 55 04 03 13 18 4e 61 6e 6f 72 61 64 69 6f 20 54 65 73 74 20 52 61 64 69 75 73 20 43 41 30 1e 17 0d 30 39 31 30 31 35 30 39 34 37 33 36 5a 17 0d 31 30 31 30 31 35 30 39 34 37 33 36 5a 30 81 83 31 0b 30 09 06 03 55 04 06 13 02 46 52 31 0f 30 0d 06 03 55 04 08 13 06 52 61 64 69 75 73 31 12 30 10 06 03 55 04 0a 13 09 4e 61 6e 6f 72 61 64 69 6f 31 21 30 1f 06 03 55 04 03 13 18 4e 61 6e 6f 72 61 64 69 6f 20 54 65 73 74 20 52 61 64 69 75 73 20 43 41 31 2c 30 2a 06 09 2a 86 48 86 f7 0d 01 09 01 16 1d 6d 69 6b 61 65 6c 2e 77 69 6b 73 74 72 6f 6d 40 6e 61 6e 6f 72 61 64 69 6f 2e 63 6f 6d 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 cd 51 e5 90 d2 5e 08 3a 83 47 4a c6 16 9e a5 da d5 ed de cb 31 bc 77 60 b8 86 65 0b 69 23 80 d5 b5 66 84 eb 89 21 2d a0 d5 ee 70 8d 13 d1 ae 0d d1 66 84 3d 5e 8a 00 af ed ee a3 a9 5c fe 15 60 56 6a 51 b0 2d 7a 0e a6 b8 18 95 4a 72 50 52 2e b4 38 24 cb aa f0 47 0c 76 94 9f eb d9 e9 ec f0 7c db 7f 27 8e c6 85 01 26 07 19 be f9 cb 10 9f fe d7 89 0a cb 2d 08 84 d6 44 eb 10 13 ca 09 8c 57 50 ca 57 5b c8 0c 40 d5 51 ed 60 4f 0b 0f bb bb da ff 15 27 6a 5a 8d 23 cd 56 9e d1 60 eb 1e d8 06 1a 9a 8c 9c 0c 91 24 42 10 5a 8e 06 27 05 4a 1b 4d 17 68 4b da c8 3d dd 54 23 eb 21 3a 72 71 e0 52 94 26 dc 09 59 cf 33 b8 c0 40 e4 cc 8c a5 f7 f1 fe 75 e7 6b b9 30 b6 40 11 8c c3 84 19 2c 03 2b 60 dc 03 7a 51 40 a7 3a 68 6c bb 3b 86 e9 70 38 a9 b9 8b 45 74 6d 15 3d 94 0b 4d b8 e7 02 03 01 00 01 a3 17 30 15 30 13 06 03 55 1d 25 04 0c 30 0a 06 08 2b 06 01 05 05 07 03 01 30 0d 06 09 2a 86 48 86 f7 0d 01 01 04 05 00 03 82 01 01 00 65 82 01 cc 39 3f 93 e8 93 a8 3f 6f 97 f2 a6 01 f8 ff 35 5a 3f 5a 9c d0 fb a2 95 3c 48 02 11 82 eb 39 96 7c c9 45 b5 71 da 70 b0 56 17 5f 25 a6 e7 21 de 0f 98 15 75 3d 95 95 97 ee 76 f1 24 f0 9c 01 32 d6 d8 5a 05 5d 52 3b 91 97 fc 42 d8 c0 40 ed bb 84 9f c9 00 6f 8a 88 3c b5 bb 43 3f 1e 9e 6a bc dc d9 64 db f4 92 5e 2b f1 d6 ea 0c 29 9a 95 f3 04 af a1 65 5c 83 0e 18 6e 7e 4a 89 96 6b 5a 84 03 17 cf 89 d0 73 17 e1 b9 9d 8f 39 b6 1b 5f b0 06 d6 26 2c d2 05 8a 60 67 73 a7 de 3a 0b b7 da eb ee 86 1f 35 05 0d 2a 87 16 28 a6 ca ce 4c c6 82 71 7c b8 e8 f9 84 cf a4 73 eb 03 6b 1c d8 0d 46 99 fc 98 1c 0b 1b 11 bc c0 43 99 06 c4 01 15 e9 1c 39 00 05 b1 3c af d9 7d 6e 80 53 1a a5 d4 b8 28 27 e6 fa 5f 39 64 b3 20 df 75 5c 14 11 5a 30 bb 4b 5c ee c0 f5 e4 91 9e a4 91 b2
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=6 method=25 vendor=0 vendorMethod=0
+EAP: EAP entering state METHOD
+SSL: Received packet(len=1024) - Flags 0xc0
+SSL: TLS Message Length: 2763
+SSL: Need 1749 bytes more input data
+SSL: Building ACK (type=25 id=6 ver=0)
+EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=10): 01 00 00 06 02 06 00 06 19 00
+EAPOL: SUPP_BE entering state RECEIVE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=1024): 01 00 03 fc 01 07 03 fc 19 40 00 04 b7 30 82 04 b3 30 82 03 9b a0 03 02 01 02 02 09 00 da c0 94 a1 a3 5a 45 d2 30 0d 06 09 2a 86 48 86 f7 0d 01 01 05 05 00 30 81 97 31 0b 30 09 06 03 55 04 06 13 02 46 52 31 0f 30 0d 06 03 55 04 08 13 06 52 61 64 69 75 73 31 12 30 10 06 03 55 04 07 13 09 53 6f 6d 65 77 68 65 72 65 31 12 30 10 06 03 55 04 0a 13 09 4e 61 6e 6f 72 61 64 69 6f 31 2c 30 2a 06 09 2a 86 48 86 f7 0d 01 09 01 16 1d 6d 69 6b 61 65 6c 2e 77 69 6b 73 74 72 6f 6d 40 6e 61 6e 6f 72 61 64 69 6f 2e 63 6f 6d 31 21 30 1f 06 03 55 04 03 13 18 4e 61 6e 6f 72 61 64 69 6f 20 54 65 73 74 20 52 61 64 69 75 73 20 43 41 30 1e 17 0d 30 39 31 30 31 35 30 39 34 37 33 36 5a 17 0d 31 30 31 30 31 35 30 39 34 37 33 36 5a 30 81 97 31 0b 30 09 06 03 55 04 06 13 02 46 52 31 0f 30 0d 06 03 55 04 08 13 06 52 61 64 69 75 73 31 12 30 10 06 03 55 04 07 13 09 53 6f 6d 65 77 68 65 72 65 31 12 30 10 06 03 55 04 0a 13 09 4e 61 6e 6f 72 61 64 69 6f 31 2c 30 2a 06 09 2a 86 48 86 f7 0d 01 09 01 16 1d 6d 69 6b 61 65 6c 2e 77 69 6b 73 74 72 6f 6d 40 6e 61 6e 6f 72 61 64 69 6f 2e 63 6f 6d 31 21 30 1f 06 03 55 04 03 13 18 4e 61 6e 6f 72 61 64 69 6f 20 54 65 73 74 20 52 61 64 69 75 73 20 43 41 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c1 68 5b bf 05 58 cd a1 4a ca f3 ee 31 15 0d e0 db e0 3a 7b 58 f4 5b f4 20 f0 2f 28 e8 f9 42 9f ae 54 dd a8 02 f5 1a b6 4a cb 47 08 e9 4e 96 2e 29 64 d4 68 00 8b ce a7 3d 56 ba f4 c7 1b 9f ce 78 7a 99 0f ef 54 da 9a bf f1 34 d1 a1 0a be e9 3b 7c e3 7e 57 03 64 1f 8e b9 74 5f 6b 38 8e 04 d1 12 a2 6e 4c bd 33 1d 93 93 95 d5 70 bf 6c 67 09 40 b5 24 f2 35 bb f2 89 70 90 da d8 89 57 29 4d 78 ea a9 a9 d1 ac ae 71 a0 89 27 25 a2 ac bc 48 36 a9 ec 74 17 67 5a b8 fd c0 c7 49 78 ec bd a0 e7 19 2f f2 64 5c 1a 16 cd 7b e5 b0 1c dc 81 14 d7 64 0e 4b 32 bc 31 c9 24 7d 51 f3 6b ad 3b b8 82 2f 61 a3 eb b9 7e 66 75 26 1f 99 94 23 86 ee fd 0f b6 57 f8 33 06 73 15 ed 00 b9 94 99 1c 41 8c 34 c1 2b 81 67 73 ae 2c 6e 5f bf a6 5d 20 d9 1b 3c 4e 12 34 a0 2c 20 73 11 1d 59 3f 2e 93 02 03 01 00 01 a3 81 ff 30 81 fc 30 1d 06 03 55 1d 0e 04 16 04 14 bf 77 2d 3e 35 b4 58 89 ee 4a ef 79 f6 68 b6 74 0e 44 6c e9 30 81 cc 06 03 55 1d 23 04 81 c4 30 81 c1 80 14 bf 77 2d 3e 35 b4 58 89 ee 4a ef 79 f6 68 b6 74 0e 44 6c e9 a1 81 9d a4 81 9a 30 81 97 31 0b 30 09 06 03 55 04 06 13 02 46 52 31 0f 30 0d 06 03 55 04 08 13 06 52 61 64 69 75 73 31 12 30 10 06 03 55 04 07 13 09 53 6f 6d 65 77 68 65 72 65 31 12 30 10 06 03 55 04 0a 13 09 4e 61 6e 6f 72 61 64 69 6f 31 2c 30 2a 06 09 2a 86 48 86 f7 0d 01 09 01 16 1d 6d 69 6b 61 65 6c 2e 77 69 6b 73 74 72 6f 6d 40 6e 61 6e 6f 72 61 64 69 6f 2e 63 6f 6d 31 21 30 1f 06 03 55 04 03 13 18 4e 61 6e 6f 72 61 64 69 6f 20 54 65 73 74 20 52 61 64 69 75 73 20 43 41 82 09 00 da c0 94 a1 a3 5a 45 d2 30 0c 06 03 55 1d 13 04 05 30 03 01 01 ff 30 0d 06 09 2a 86 48 86 f7 0d 01 01 05 05 00 03 82 01 01 00 ba 8b db ae 64 8d ad a4 45 f6 b4 68 6a 3c b0 eb 2c b0 c4 9e 31 c2 6a 90 0f 04 2f 9f ef b6 54 4a 21 52 97 51 6d b0 8c 87 37 00 23 01 2f 65 83 bf 7c 0a 32 f6 8e 9a 1e 76 f7 4a 48 9b
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=7 method=25 vendor=0 vendorMethod=0
+EAP: EAP entering state METHOD
+SSL: Received packet(len=1020) - Flags 0x40
+SSL: Need 735 bytes more input data
+SSL: Building ACK (type=25 id=7 ver=0)
+EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=10): 01 00 00 06 02 07 00 06 19 00
+EAPOL: SUPP_BE entering state RECEIVE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=745): 01 00 02 e5 01 08 02 e5 19 00 16 90 ab f6 66 f4 98 4e ce 53 f8 ae a5 76 49 60 87 7a 4a 0d f2 23 ab 87 53 f7 35 80 32 7a 6c 80 9c 95 93 17 cf db 5b 6a 33 62 33 e3 dc a1 de 15 ba 2b ca 9c 7b 0d 2e 86 3a 9d b3 aa da e3 4f cb f3 c7 3e 36 e9 00 36 55 26 67 fb 95 60 fc 71 f1 d3 34 a4 2e ef e4 3a a2 46 39 26 34 52 57 af 5e 05 2c e6 e3 6f 9e 6e b2 70 78 54 0b a3 25 76 ea d7 16 12 be d1 ce 1b ca 94 2f e2 5b fa 97 62 d8 ea 90 cd 55 f4 09 14 e7 ba 3c e0 01 95 2b fe 7c e8 7d 09 bc 50 aa 2d 79 90 16 93 7b 59 28 f6 d5 2e ea 47 54 a6 69 ef 35 0c 38 58 e4 54 01 e0 3f fb 67 a7 2a 62 65 20 e7 28 4f c4 df a7 76 4d a8 ab df 41 e2 16 03 01 02 0d 0c 00 02 09 00 80 a2 a8 a5 57 5f 90 41 20 62 67 dc 77 1f e9 df 33 dd 3a 44 33 fa b6 f4 b8 cb 7e 0a 0b 4b e4 76 3e a1 aa 84 06 81 98 36 55 72 05 81 88 a4 cd 90 65 f8 45 8f db a4 16 dc 9b 19 d4 d0 0d 70 e0 8a 1d e3 d4 5d 35 67 8f cc c4 11 12 50 50 5c 7e b8 52 85 cf 66 70 9e e0 19 18 5c 5c ce 92 08 b6 d9 a2 b9 57 2f c5 e4 69 51 b3 d1 87 31 0e 52 04 9a f1 04 fd aa 58 5c f6 d3 61 6c 52 2b 87 48 cb 5f cb 00 01 02 00 80 36 c4 d3 d3 a2 0a 1a ec 2b ec 09 7f 53 21 7e 8e 92 6e 25 01 e7 b7 2a 2a 6b 28 de 08 4b ae 2d 91 a9 5e 40 d1 9e 4d 6f ba 77 ab 6b 8a 97 e2 ba 07 6a aa ea d9 f4 42 5b 30 34 b5 63 a4 24 b0 02 dd ca c4 44 7d 9c c1 d0 6b 36 c2 a4 f2 6b e5 42 7b cf fe b9 77 4a 49 b6 58 f4 a1 5e 85 20 3d 35 51 4a 23 23 4a 0b ee f0 26 42 90 fc 63 3b 95 80 ff 01 5e ce cc 7d 2b 74 32 bd 62 45 66 b3 70 84 e1 01 00 24 d9 2c 7d 89 01 72 11 98 11 df af 60 91 fb 66 c7 3f f6 d0 0f cd 09 25 f1 b5 1a 45 0d ab 79 c5 7b c6 e6 74 5c a7 fc 9a 32 33 f0 33 8f 15 ff 7f 3d 2b f7 25 07 4b 54 4f d2 02 a1 a0 ab 5b 69 c1 1e 66 bb 3f d6 97 2a bc c1 4c 17 a2 97 d4 15 7d 80 72 e7 53 bb 6e 68 56 0c 3d b1 24 51 a5 4c fa 7d cb 7d 35 70 0e 7b 44 c3 41 9b c8 bb 85 0d e7 88 59 67 26 55 41 b7 52 d8 8f 20 3f ba 67 7f 82 c5 11 cb 5a 50 1c 69 21 c9 c3 8d e8 46 1f 10 ef a3 3a 7f fc ad ba ee ab a7 ef 99 1c da fc 2d b9 f8 ac eb a9 02 34 f6 c8 c5 b3 9c 20 8b aa 2a 93 2d 3c d0 b0 51 9a dc 77 8f 60 39 c2 22 55 96 8b d8 8a 8e 5b df 9a 69 46 68 49 e3 ad 87 ec c4 c2 8b dc ae e8 56 50 52 67 27 20 dc b6 7d a2 c2 9d 8b c7 ed 8a 56 1a f1 94 e5 cc 4a 41 2a f2 56 a6 c3 d9 f5 5e 1c a9 81 98 7f 75 4e b3 59 44 6b 9e 16 03 01 00 04 0e 00 00 00
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=8 method=25 vendor=0 vendorMethod=0
+EAP: EAP entering state METHOD
+SSL: Received packet(len=741) - Flags 0x00
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:SSLv3 read server hello A
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:SSLv3 read server certificate A
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:SSLv3 read server key exchange A
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:SSLv3 read server done A
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:SSLv3 write client key exchange A
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:SSLv3 write change cipher spec A
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:SSLv3 write finished A
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:SSLv3 flush data
+SSL: (where=0x1002 ret=0xffffffff)
+SSL: SSL_connect:error in unknown state
+SSL: SSL_connect - want more data
+SSL: 198 bytes pending from ssl_out
+SSL: 198 bytes left to be sent out (of total 198 bytes)
+EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=208): 01 00 00 cc 02 08 00 cc 19 00 16 03 01 00 86 10 00 00 82 00 80 60 19 03 aa ae c5 02 aa dd 6d c5 c7 65 43 de 11 5f 4e 4f 2c 6b 2b d1 45 7c ab b4 d6 13 26 03 f7 7e dd 70 f4 4a 17 05 75 25 78 ca ce df 01 90 58 69 9c 15 f3 1b b1 02 83 a4 35 28 66 1e 9e 02 08 bc 2e b7 95 b9 9f c6 44 f4 bc 1f c3 27 a5 20 47 a7 e5 fb 2f 30 92 fb 6a f5 4f 0e 13 a8 d5 ce 35 1f 76 49 b0 ab 1b e3 6e 69 80 f3 57 95 78 7f fb 91 d4 35 9b f3 b9 9a 33 a9 12 2c 05 14 a8 42 44 14 03 01 00 01 01 16 03 01 00 30 d1 3c be bd 7c 83 ad 07 5b 50 ae fa d3 09 1e 4c 65 d5 e7 50 51 37 74 1b 02 92 55 20 46 0c 5b 26 67 ba d9 f5 3b 64 f1 fb 0f ea 71 26 d6 1b 90 bf
+EAPOL: SUPP_BE entering state RECEIVE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=244): 01 00 00 f0 01 09 00 f0 19 00 16 03 01 00 aa 04 00 00 a6 00 00 00 00 00 a0 d1 7d 41 12 a8 ba aa 68 39 26 11 df 24 2a af 37 aa 48 7c 3c 8f 9a 20 a0 a3 aa 7d da 6a f8 47 97 ab 35 0f 8c 41 00 9b 9c 67 c7 5d c6 e9 af 2d f4 dc 98 8c da 13 00 79 96 60 e8 71 13 f8 2d 50 5f 90 27 4f 39 2c 77 58 e5 5a 33 04 c3 df 40 46 ed fa d8 0c 00 12 ee 64 65 bb 44 9d 84 f5 82 7b e8 2a 94 b6 62 54 1c d3 f1 e0 5d 50 da b5 20 dd 2d 7f c2 c3 fe f2 d8 31 ab cb ff d1 99 6b 4e fd ab 4f 97 bf e6 75 1e cb a6 e8 2a da 15 56 27 8c 81 c9 4a de ac cc fb ae 36 76 74 12 31 6d 05 ae a2 14 03 01 00 01 01 16 03 01 00 30 55 13 6a c3 a8 0a f9 79 35 4c 8b e2 03 fd 23 3e be 7e b2 0f da 41 ba 11 4d 19 b6 eb 5d 1c cb 98 3a 75 93 3a 35 60 22 60 d3 d0 b8 7a 19 19 92 de
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=9 method=25 vendor=0 vendorMethod=0
+EAP: EAP entering state METHOD
+SSL: Received packet(len=240) - Flags 0x00
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:unknown state
+SSL: (where=0x1001 ret=0x1)
+SSL: SSL_connect:SSLv3 read finished A
+SSL: (where=0x20 ret=0x1)
+SSL: (where=0x1002 ret=0x1)
+SSL: 0 bytes pending from ssl_out
+OpenSSL: tls_connection_handshake - Failed to read possible Application Data error:00000000:lib(0):func(0):reason(0)
+SSL: No data to be sent out
+EAP-PEAP: TLS done, proceed to Phase 2
+EAP-PEAP: using label 'client EAP encryption' in key derivation
+EAP-PEAP: Derived key - hexdump(len=64): [REMOVED]
+SSL: Building ACK (type=25 id=9 ver=0)
+EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=10): 01 00 00 06 02 09 00 06 19 00
+EAPOL: SUPP_BE entering state RECEIVE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=47): 01 00 00 2b 01 0a 00 2b 19 00 17 03 01 00 20 38 e2 d2 e6 3b 9b ba 09 8d 9f 94 30 89 80 ff 46 72 91 3e c3 a2 cf 1f 7e f8 c0 c2 45 51 32 3c 1a
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=10 method=25 vendor=0 vendorMethod=0
+EAP: EAP entering state METHOD
+SSL: Received packet(len=43) - Flags 0x00
+EAP-PEAP: received 37 bytes encrypted data for Phase 2
+EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=5): 01 0a 00 05 01
+EAP-PEAP: received Phase 2: code=1 identifier=10 length=5
+EAP-PEAP: Phase 2 Request: type=1
+EAP: using real identity - hexdump_ascii(len=4):
+     75 73 65 72                                       user            
+EAP-PEAP: Encrypting Phase 2 data - hexdump(len=9): [REMOVED]
+SSL: 74 bytes left to be sent out (of total 74 bytes)
+EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=84): 01 00 00 50 02 0a 00 50 19 00 17 03 01 00 20 be fc c5 02 3e 75 24 99 28 e7 94 f6 bb d5 61 ec 21 32 0e cb f5 d6 ad ba d7 f9 05 03 fb 14 68 7f 17 03 01 00 20 42 38 51 eb cb 5c d7 f9 af d3 ec 94 11 57 0a 0a 3b 3b 4e 40 cd c4 c6 7c dd 8b 8c 0c ba f5 63 05
+EAPOL: SUPP_BE entering state RECEIVE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=79): 01 00 00 4b 01 0b 00 4b 19 00 17 03 01 00 40 c0 f3 ae d5 53 75 11 da 4a 09 7c 79 42 46 71 87 9d 1c c4 63 3d 25 16 51 24 12 41 98 71 7d 83 eb 50 70 27 c5 72 8c 33 f4 34 cd 7e 5c 09 88 9b 01 44 b5 03 f8 2e ff eb f1 a3 67 a2 16 b7 69 b6 33
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=11 method=25 vendor=0 vendorMethod=0
+EAP: EAP entering state METHOD
+SSL: Received packet(len=75) - Flags 0x00
+EAP-PEAP: received 69 bytes encrypted data for Phase 2
+EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=26): 1a 01 0b 00 19 10 fe 23 58 58 fb fe 95 b6 09 6d ab ed 7f 36 f7 6d 75 73 65 72
+EAP-PEAP: received Phase 2: code=1 identifier=11 length=30
+EAP-PEAP: Phase 2 Request: type=26
+EAP-PEAP: Selected Phase 2 EAP vendor 0 method 26
+EAP-MSCHAPV2: RX identifier 11 mschapv2_id 11
+EAP-MSCHAPV2: Received challenge
+EAP-MSCHAPV2: Authentication Servername - hexdump_ascii(len=4):
+     75 73 65 72                                       user            
+EAP-MSCHAPV2: Generating Challenge Response
+MSCHAPV2: Identity - hexdump_ascii(len=4):
+     75 73 65 72                                       user            
+MSCHAPV2: Username - hexdump_ascii(len=4):
+     75 73 65 72                                       user            
+MSCHAPV2: auth_challenge - hexdump(len=16): fe 23 58 58 fb fe 95 b6 09 6d ab ed 7f 36 f7 6d
+MSCHAPV2: peer_challenge - hexdump(len=16): e9 d2 b7 fe 93 cf 26 bd 83 8a 15 a8 10 7b fe f1
+MSCHAPV2: username - hexdump_ascii(len=4):
+     75 73 65 72                                       user            
+MSCHAPV2: password - hexdump_ascii(len=6): [REMOVED]
+MSCHAPV2: NT Response - hexdump(len=24): dc 46 0e 82 c1 36 7f 0d 94 a8 57 5a ff 9d f6 fb b7 75 a7 10 e8 65 7a fa
+MSCHAPV2: Auth Response - hexdump(len=20): b4 ed 46 71 48 38 51 ab 7e 65 e2 2f 04 4d b6 ea b8 78 4e 33
+MSCHAPV2: Master Key - hexdump(len=16): [REMOVED]
+EAP-MSCHAPV2: TX identifier 11 mschapv2_id 11 (response)
+EAP-PEAP: Encrypting Phase 2 data - hexdump(len=63): [REMOVED]
+SSL: 138 bytes left to be sent out (of total 138 bytes)
+EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=148): 01 00 00 90 02 0b 00 90 19 00 17 03 01 00 20 d3 05 6a 82 44 14 99 3c 1c e9 3e 50 c8 c4 f6 85 84 59 38 ac 7c 3d 5d 28 15 6e 14 eb 22 1e fb 6e 17 03 01 00 60 b3 9b 0c a3 96 03 c0 04 9b 4d cb c6 10 65 29 db 76 03 e6 59 7f 38 b7 0d 1b 31 83 99 e2 77 3b 51 f4 d6 67 fa 62 88 71 b6 3b 5d fe 10 d4 12 14 9b 09 01 d5 c3 92 17 03 4a 64 24 28 98 ac 8c 76 d3 64 d0 ed c2 f6 7f 2f 0d 81 25 d0 ad 26 37 51 dc 16 fd c9 7b ae 66 71 f4 fd 95 f8 f7 cb 41 63 1f
+EAPOL: SUPP_BE entering state RECEIVE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=95): 01 00 00 5b 01 0c 00 5b 19 00 17 03 01 00 50 a8 52 be 38 35 33 a5 81 1e ab 82 2a b2 4f 72 80 ff 65 ef 3d 1f 18 67 30 3d 00 90 d8 7e 94 6c ed 2c 5c 7d 94 96 fc 74 5f e8 68 3c ef 6f 4b ef 1c f8 08 91 69 a2 07 63 a5 97 c4 ab 3b 67 f9 59 0a 78 65 28 bb 68 aa af d0 ba 81 0a c7 32 86 87 b1
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=12 method=25 vendor=0 vendorMethod=0
+EAP: EAP entering state METHOD
+SSL: Received packet(len=91) - Flags 0x00
+EAP-PEAP: received 85 bytes encrypted data for Phase 2
+EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=47): 1a 03 0b 00 2e 53 3d 42 34 45 44 34 36 37 31 34 38 33 38 35 31 41 42 37 45 36 35 45 32 32 46 30 34 34 44 42 36 45 41 42 38 37 38 34 45 33 33
+EAP-PEAP: received Phase 2: code=1 identifier=12 length=51
+EAP-PEAP: Phase 2 Request: type=26
+EAP-MSCHAPV2: RX identifier 12 mschapv2_id 11
+EAP-MSCHAPV2: Received success
+EAP-MSCHAPV2: Success message - hexdump_ascii(len=0):
+EAP-MSCHAPV2: Authentication succeeded
+EAP-PEAP: Encrypting Phase 2 data - hexdump(len=6): [REMOVED]
+SSL: 74 bytes left to be sent out (of total 74 bytes)
+EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=84): 01 00 00 50 02 0c 00 50 19 00 17 03 01 00 20 a7 21 33 82 98 3c 7e 70 29 87 b8 f2 a1 2f f6 81 83 97 d8 e5 a0 4a 93 2b c6 d1 fc bf 9c f5 95 11 17 03 01 00 20 c7 9c c8 b5 f3 db d4 5f 6b ef 76 fb 19 31 8b 58 d1 13 62 86 e4 75 69 63 f0 3e 6d cc ee c0 38 0d
+EAPOL: SUPP_BE entering state RECEIVE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=63): 01 00 00 3b 01 0d 00 3b 19 00 17 03 01 00 30 01 b1 86 73 a2 c8 de a4 eb fa 14 63 71 81 e0 c0 b9 c2 fa 18 b1 30 f6 f2 20 7d 20 b1 cd a7 7d 9b 7b 7e 5d 0a b8 dd 9d 6f e4 88 0a a8 47 9d 57 17
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=13 method=25 vendor=0 vendorMethod=0
+EAP: EAP entering state METHOD
+SSL: Received packet(len=59) - Flags 0x00
+EAP-PEAP: received 53 bytes encrypted data for Phase 2
+EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=11): 01 0d 00 0b 21 80 03 00 02 00 01
+EAP-PEAP: received Phase 2: code=1 identifier=13 length=11
+EAP-PEAP: Phase 2 Request: type=33
+EAP-TLV: Received TLVs - hexdump(len=6): 80 03 00 02 00 01
+EAP-TLV: Result TLV - hexdump(len=2): 00 01
+EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
+EAP-PEAP: Encrypting Phase 2 data - hexdump(len=11): [REMOVED]
+SSL: 90 bytes left to be sent out (of total 90 bytes)
+EAP: method process -> ignore=FALSE methodState=DONE decision=UNCOND_SUCC
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+TX EAPOL: dst=00:1e:58:ea:8f:4f
+TX EAPOL - hexdump(len=100): 01 00 00 60 02 0d 00 60 19 00 17 03 01 00 20 c3 62 1e 53 90 3c dd b0 38 58 d8 f2 01 d7 63 9e 98 5a e5 64 6a de c6 76 49 08 bf 1b a9 58 4a e9 17 03 01 00 30 29 22 38 27 de 71 02 85 d6 9f fc 5b dc c4 dd c2 73 cf 5b 35 99 06 09 26 2d 12 eb 54 85 9e a3 9a 74 7a 45 43 53 83 e1 a3 dc 8f 80 24 ee 6c 42 e1
+EAPOL: SUPP_BE entering state RECEIVE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=8): 01 00 00 04 03 0d 00 04
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Success
+EAP: EAP entering state SUCCESS
+CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+EAPOL: SUPP_BE entering state RECEIVE
+EAPOL: SUPP_BE entering state SUCCESS
+EAPOL: SUPP_BE entering state IDLE
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=121): 01 03 00 75 02 00 8a 00 10 00 00 00 00 00 00 00 01 3c 09 6c dd 65 ec f2 84 fa 16 76 54 d0 43 fe a0 eb 5d 98 4e be 18 83 b0 c4 60 1b db a7 d1 56 2c 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 16 dd 14 00 0f ac 04 e4 16 9a 47 29 f8 fb 52 07 a4 1d 3b 88 76 83 ed
+EAPOL: Ignoring WPA EAPOL-Key frame in EAPOL state machines
+IEEE 802.1X RX: version=1 type=3 length=117
+  EAPOL-Key type=2
+  key_info 0x8a (ver=2 keyidx=0 rsvd=0 Pairwise Ack)
+  key_length=16 key_data_length=22
+  replay_counter - hexdump(len=8): 00 00 00 00 00 00 00 01
+  key_nonce - hexdump(len=32): 3c 09 6c dd 65 ec f2 84 fa 16 76 54 d0 43 fe a0 eb 5d 98 4e be 18 83 b0 c4 60 1b db a7 d1 56 2c
+  key_iv - hexdump(len=16): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  key_rsc - hexdump(len=8): 00 00 00 00 00 00 00 00
+  key_id (reserved) - hexdump(len=8): 00 00 00 00 00 00 00 00
+  key_mic - hexdump(len=16): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+WPA: RX EAPOL-Key - hexdump(len=121): 01 03 00 75 02 00 8a 00 10 00 00 00 00 00 00 00 01 3c 09 6c dd 65 ec f2 84 fa 16 76 54 d0 43 fe a0 eb 5d 98 4e be 18 83 b0 c4 60 1b db a7 d1 56 2c 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 16 dd 14 00 0f ac 04 e4 16 9a 47 29 f8 fb 52 07 a4 1d 3b 88 76 83 ed
+State: ASSOCIATED -> 4WAY_HANDSHAKE
+WPA: RX message 1 of 4-Way Handshake from 00:1e:58:ea:8f:4f (ver=2)
+RSN: msg 1/4 key data - hexdump(len=22): dd 14 00 0f ac 04 e4 16 9a 47 29 f8 fb 52 07 a4 1d 3b 88 76 83 ed
+RSN: PMKID from Authenticator - hexdump(len=16): e4 16 9a 47 29 f8 fb 52 07 a4 1d 3b 88 76 83 ed
+RSN: no matching PMKID found
+EAPOL: Successfully fetched key (len=32)
+EAPOL: Successfully fetched key (len=64)
+WPA: PMK from EAPOL state machines - hexdump(len=32): [REMOVED]
+RSN: added PMKSA cache entry for 00:1e:58:ea:8f:4f
+RSN: the new PMK matches with the PMKID
+WPA: Renewed SNonce - hexdump(len=32): d0 e3 9e 5c b5 57 32 f3 f7 1c a1 53 c3 be f6 d0 e5 93 ee 16 9c d0 88 03 f4 e3 2c 57 37 b9 0c e8
+WPA: PTK derivation - A1=00:0f:b5:0d:da:c5 A2=00:1e:58:ea:8f:4f
+WPA: PMK - hexdump(len=32): [REMOVED]
+WPA: PTK - hexdump(len=64): [REMOVED]
+WPA: WPA IE for msg 2/4 - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00
+WPA: Sending EAPOL-Key 2/4
+WPA: TX EAPOL-Key - hexdump(len=121): 01 03 00 75 02 01 0a 00 00 00 00 00 00 00 00 00 01 d0 e3 9e 5c b5 57 32 f3 f7 1c a1 53 c3 be f6 d0 e5 93 ee 16 9c d0 88 03 f4 e3 2c 57 37 b9 0c e8 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 04 64 13 75 64 13 6d e2 f3 cf 02 6b e9 18 85 80 00 16 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00
+RX EAPOL from 00:1e:58:ea:8f:4f
+RX EAPOL - hexdump(len=155): 01 03 00 97 02 13 ca 00 10 00 00 00 00 00 00 00 02 3c 09 6c dd 65 ec f2 84 fa 16 76 54 d0 43 fe a0 eb 5d 98 4e be 18 83 b0 c4 60 1b db a7 d1 56 2c 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7e 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 82 e7 bb e9 86 af ea 9b 5b 89 58 db 04 52 21 02 00 38 f9 db 72 3f d1 16 1e 49 05 d0 8b 05 a3 e2 61 ff 82 97 84 49 66 d7 13 45 e8 f5 88 1e bc 81 28 03 17 5c 45 64 f9 4a 19 e5 80 2c d5 72 fa 75 b4 0f 27 67 4a de a1 47 f5 e3
+EAPOL: Ignoring WPA EAPOL-Key frame in EAPOL state machines
+IEEE 802.1X RX: version=1 type=3 length=151
+  EAPOL-Key type=2
+  key_info 0x13ca (ver=2 keyidx=0 rsvd=0 Pairwise Install Ack MIC Secure Encr)
+  key_length=16 key_data_length=56
+  replay_counter - hexdump(len=8): 00 00 00 00 00 00 00 02
+  key_nonce - hexdump(len=32): 3c 09 6c dd 65 ec f2 84 fa 16 76 54 d0 43 fe a0 eb 5d 98 4e be 18 83 b0 c4 60 1b db a7 d1 56 2c
+  key_iv - hexdump(len=16): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  key_rsc - hexdump(len=8): 7e 02 00 00 00 00 00 00
+  key_id (reserved) - hexdump(len=8): 00 00 00 00 00 00 00 00
+  key_mic - hexdump(len=16): 82 e7 bb e9 86 af ea 9b 5b 89 58 db 04 52 21 02
+WPA: RX EAPOL-Key - hexdump(len=155): 01 03 00 97 02 13 ca 00 10 00 00 00 00 00 00 00 02 3c 09 6c dd 65 ec f2 84 fa 16 76 54 d0 43 fe a0 eb 5d 98 4e be 18 83 b0 c4 60 1b db a7 d1 56 2c 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7e 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 82 e7 bb e9 86 af ea 9b 5b 89 58 db 04 52 21 02 00 38 f9 db 72 3f d1 16 1e 49 05 d0 8b 05 a3 e2 61 ff 82 97 84 49 66 d7 13 45 e8 f5 88 1e bc 81 28 03 17 5c 45 64 f9 4a 19 e5 80 2c d5 72 fa 75 b4 0f 27 67 4a de a1 47 f5 e3
+RSN: encrypted key data - hexdump(len=56): f9 db 72 3f d1 16 1e 49 05 d0 8b 05 a3 e2 61 ff 82 97 84 49 66 d7 13 45 e8 f5 88 1e bc 81 28 03 17 5c 45 64 f9 4a 19 e5 80 2c d5 72 fa 75 b4 0f 27 67 4a de a1 47 f5 e3
+WPA: decrypted EAPOL-Key key data - hexdump(len=48): [REMOVED]
+State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+WPA: RX message 3 of 4-Way Handshake from 00:1e:58:ea:8f:4f (ver=2)
+WPA: IE KeyData - hexdump(len=48): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 00 00 dd 16 00 0f ac 01 01 00 3b d8 e1 4d 09 ba b1 08 1a d1 5a 97 72 a3 7f 53 dd 00
+WPA: Sending EAPOL-Key 4/4
+WPA: TX EAPOL-Key - hexdump(len=99): 01 03 00 5f 02 03 0a 00 00 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 bd 9c f2 19 df ff 1b c8 c6 1f c5 2a 5e 39 09 56 00 00
+WPA: Installing PTK to the driver.
+wpa_driver_wext_set_key: alg=3 key_idx=0 set_tx=1 seq_len=6 key_len=16
+EAPOL: External notification - portValid=1
+EAPOL: SUPP_PAE entering state AUTHENTICATED
+EAPOL authentication completed successfully
+State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+RSN: received GTK in pairwise handshake - hexdump(len=18): [REMOVED]
+WPA: Group Key - hexdump(len=16): [REMOVED]
+WPA: Installing GTK to the driver (keyidx=1 tx=0 len=16).
+WPA: RSC - hexdump(len=6): 7e 02 00 00 00 00
+wpa_driver_wext_set_key: alg=3 key_idx=1 set_tx=0 seq_len=6 key_len=16
+WPA: Key negotiation completed with 00:1e:58:ea:8f:4f [PTK=CCMP GTK=CCMP]
+Cancelling authentication timeout
+Removed BSSID 00:1e:58:ea:8f:4f from blacklist
+State: GROUP_HANDSHAKE -> COMPLETED
+CTRL-EVENT-CONNECTED - Connection to 00:1e:58:ea:8f:4f completed (auth) [id=0 id_s

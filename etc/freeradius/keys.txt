@@ -1,0 +1,2 @@
+http://www.openvpn.net/index.php/open-source/documentation/howto.html#pki
+
