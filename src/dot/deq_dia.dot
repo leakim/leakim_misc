@@ -1,0 +1,24 @@
+
+digraph G {
+
+   subgraph cluster_1 {
+      node [style=filled];
+      nano_connect -> nano_report_connecting -> nano_report_connected -> nano_report_disconnected;
+      label = "WiFi_Mgr";
+      color=blue
+   }
+
+   subgraph cluster_0 {
+      style=filled;
+      color=lightgrey;
+      node [style=filled,color=white];
+      Idle -> Scanning -> Connecting ->Connected -> Disconnecting -> Disconnected -> Idle;
+      label = "driver";
+   }
+
+   nano_connect -> Idle;
+   Connecting -> nano_report_connecting;
+   Connected -> nano_report_connected;
+   Disconnected -> nano_report_disconnected;
+}
+
