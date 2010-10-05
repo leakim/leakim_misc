@@ -63,3 +63,9 @@ netcat mz
 #madwifi-tools
 exuberant-ctags 
 
+# visualize and edit recordings/music
+kwave
+
+# KDE hex editor
+okteta
+
