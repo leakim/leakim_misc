@@ -36,7 +36,9 @@ export LM_LICENSE_FILE="/media/sda1/Program Files/ARM/ADSv1_2/licenses/license.d
 export PATH=$PATH:/usr/local/pcaptools/bin/:/usr/local/wireshark-trunk/bin
 
 # Programming 
-alias ctags_ss='ctags --language-force=C -h ".h.H.def.c.hec.hep.het.hev"'
+alias ss_ctags='ctags --language-force=C -h ".h.H.def.c.hic.hip.hit.hiv.him.hec.hep.het.hev.hem.cxx.cc.cpp."'
+alias ss_rsync="rsync -avm --include='*.h' --include='*.H' --include='*.c' --include='*.cxx' --include='*.cxx' --include='*.C' --include='*.def' --include='*.hec' --include='*.hep' --include='*.het' --include='*.hev' --include='*.hem' --include='*.hic' --include='*.hip' --include='*.hit' --include='*.hiv' --include='*.him' -f 'hide,! */'"
+alias ss2_rsync="rsync -avm --include='*.h' --include='*.H' --include='*.c' --include='*.cxx' --include='*.cxx' --include='*.C' --include='*.def' --include='*.hec' --include='*.hep' --include='*.het' --include='*.hev' --include='*.hem' --include='*.hic' --include='*.hip' --include='*.hit' --include='*.hiv' --include='*.him' --exclude='- /*'"
 
 # Show new files in current project
 alias cvsnew="cvs status | grep ?"
@@ -52,7 +54,9 @@ export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
 alias ls='ls $LS_OPTIONS'
 
-alias grep='grep --exclude-dir=.svn --exclude=tags --exclude=cscope.out'
+export GREP_OPTIONS='--binary-files=without-match --exclude=tags --exclude=cscope.out --exclude-dir=.svn --exclude-dir=.git'
+#alias grep='grep --exclude=tags --exclude=cscope.out --exclude-dir=.svn --exclude-dir=.git'
+
 alias iwgrep='agrep -d Cell '
 
 export HISTCONTROL=ignoredups
@@ -62,6 +66,36 @@ export EDITOR=vim
 source ~/.twtty
 twtty
 unset twtty
+
+function meld_bin() {
+   IN1=$1
+   IN2=$2
+
+   if [ -e "$IN1" ]; then
+      echo "using $IN1"
+   else
+      echo "file 1 is missing"
+      return
+   fi
+
+   if [ -e "$IN2" ]; then
+      echo "using $IN2"
+   else
+      echo "file 2 is missing"
+      return
+   fi
+
+   F1="`mktemp``basename $IN1`"
+   F2="`mktemp``basename $IN2`"
+   xxd -c 1 "$IN1" | cut -d ' ' -f 2- > $F1
+   xxd -c 1 "$IN2" | cut -d ' ' -f 2- > $F2
+   #xxd -i -c1 "$IN1" > $F1
+   #xxd -i -c1 "$IN2" > $F2
+   echo "comparing $F1 $F2"
+   meld $F1 $F2
+   #kdiff3 $F1 $F2
+   rm $F1 $F2
+}
 
 function sniff() {
    SIF="$1"
