@@ -52,6 +52,9 @@ export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
 alias ls='ls $LS_OPTIONS'
 
+alias grep='grep --exclude-dir=.svn --exclude=tags --exclude=cscope.out'
+alias iwgrep='agrep -d Cell '
+
 export HISTCONTROL=ignoredups
 export HISTSIZE=2500
 export EDITOR=vim
@@ -59,4 +62,29 @@ export EDITOR=vim
 source ~/.twtty
 twtty
 unset twtty
+
+function sniff() {
+   SIF="$1"
+   CHANNEL="$2"
+   OUTFILE="/tmp/air.pcap"
+
+   if [ "x$2" == "x" ]; then
+      SIF="wlan0"
+      CHANNEL="1"
+      echo "defaulting to args: $SIF $CHANNEL"
+   else
+      echo "using: $SIF $CHANNEL"
+   fi
+
+   sudo ifconfig $SIF down
+   sleep 1
+   sudo iwconfig $SIF mode monitor
+   sudo iwconfig $SIF channel $CHANNEL
+   sudo ifconfig $SIF up
+   sleep 1
+   sudo iwconfig $SIF channel $CHANNEL
+   sudo touch "$OUTFILE"
+   sudo chmod a+rw "$OUTFILE"
+   sudo tshark -i $SIF -w "$OUTFILE"
+}
 
