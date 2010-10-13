@@ -18,6 +18,7 @@ do
          if ch == c then
             return tostring(i+1)
          end
+         i = i + 1
       end
       return "("..n..")"
    end
