@@ -1,0 +1,23 @@
+
+debugging of linux kernel using serial console
+----------------------------------------------
+
+on boot:
+
+console=ttyS0,57600
+console=ttyS0,115200
+
+connect to laptop using kermit
+------------------------------
+
+kermit -l /dev/ttyUSB0
+(/home/miwi/) C-Kermit>set speed  57600
+(/home/miwi/) C-Kermit>set speed 115200
+/dev/ttyUSB0, 115200 bps
+(/home/miwi/) C-Kermit>set carrier-watch off
+(/home/miwi/) C-Kermit>c
+
+Ctrl \ b h  <-- help
+Ctrl \ b 9  <-- change log level to 9
+
+
