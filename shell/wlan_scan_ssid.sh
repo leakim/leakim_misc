@@ -9,7 +9,7 @@ if [ "x$SSID" == "x" ]; then
 	exit 1
 fi
 
-echo "scanning for ssid: $SSID using $INTERFACE"
+echo "scanning for ssid: \"$SSID\" using $INTERFACE"
 
 MMODE="`iwconfig $INTERFACE 2>/dev/null | grep $INTERFACE | grep Mode | grep Monitor | wc -l`"
 if [ "$MMODE" == "1" ]; then
@@ -20,5 +20,5 @@ if [ "$MMODE" == "1" ]; then
 	sudo ifconfig $INTERFACE up
 fi
 
-sudo iwlist $INTERFACE scan | agrep -d 'Cell ' $SSID
+sudo iwlist $INTERFACE scan | agrep -d 'Cell ' "ESSID:\"$SSID\""
 
