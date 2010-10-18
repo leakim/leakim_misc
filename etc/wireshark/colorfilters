@@ -1,0 +1,1 @@
+@AuthAssocEAPOL@((wlan.fc.type_subtype == 0x0b) || (wlan.fc.type_subtype == 0x00) || (wlan.fc.type_subtype == 0x01)) || (wlan.fc.type_subtype == 0x0c) || eapol@[65535,0,0][0,0,0]

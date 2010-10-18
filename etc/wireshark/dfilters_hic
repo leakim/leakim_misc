@@ -1,0 +1,1 @@
+"DATA_IND_REQ" (hic.typeid == 0x8000) || (hic.typeid == 0x0000)
