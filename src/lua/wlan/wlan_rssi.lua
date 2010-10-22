@@ -1,4 +1,4 @@
--- tshark -q -X lua_script:wlan_cw.lua -r wlan.pcap
+-- tshark -q -X lua_script:wlan_rssi.lua -r wlan.pcap
 
 do
     -- additional filter (not recommended, use pre-processing or capture filter if possible)
@@ -47,6 +47,7 @@ do
         end
 
         function tap.draw()
+           io.write(string.format("filter was: %s\n", filter))
            io.write(string.format("min: %d\n", stats_min))
            io.write(string.format("max: %d\n", stats_max))
            io.write(string.format("avg: %d\n", stats_sum/stats_count))
