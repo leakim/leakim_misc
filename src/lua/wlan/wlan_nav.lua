@@ -1,6 +1,13 @@
 --
 -- usage: tshark -q -X lua_script:wlan_nav.lua -r file.dump 
 --
+-- for CH in `seq 1 11` ; do
+--    echo "channel: $CH"
+--    sudo iwconfig wlan0 channel $CH
+--    sudo tshark -a duration:5 -i wlan0 -w /tmp/air_ch.pcap 2>/dev/null
+--    tshark -q -X lua_script:wlan_nav.lua -r /tmp/air_ch.pcap
+-- done
+--
 
 do
    -- assumes infrastructure mode and that STA sends probe requests
