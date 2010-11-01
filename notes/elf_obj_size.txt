@@ -7,3 +7,14 @@ find . -name "*.o" | while read LINE ; do
    echo $LINE `objdump -t $LINE | awk --non-decimal-data '($4==".text"){printf("%d %s\n","0x"$5,"")}' | sort -n | Sum `
 done | sort -n -k 3
 
+
+readelf -S obj/test_wpa_psk_with_wps | grep -E '(.text|.rodata|.data|.bss)' | awk '{printf("%d\n", "0x" $6 )}' | Sum
+.text   (exec code)
+.rodata (read only data)
+.data   (initialized variables not on stack)
+.bss    (Block Started by Symbol - section with unitialized variables)
+ 
+
+-d dissasemple (focus on .text segment)
+objdump -d -j .text obj/test_wpa_psk
+
