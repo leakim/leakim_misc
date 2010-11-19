@@ -1,1 +1,1 @@
-@HIC_JOIN_AUTH_ASSOC@(hic.typeid_f == 0x3010000) || (hic.typeid_f == 0x4010000) || (hic.typeid_f == 0x6010000)@[6131,65535,0][6682,6682,6682]
+@HIC_JOIN_AUTH_ASSOC@(hic.typeid_f == 0x3010000) || (hic.typeid_f == 0x4010000) || (hic.typeid_f == 0x8010000) || (hic.typeid_f == 0x5010000) || (hic.typeid_f == 0xd010000) || (hic.typeid_f == 0x6010000)@[6131,65535,0][6682,6682,6682]
