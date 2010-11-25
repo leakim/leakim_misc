@@ -5,3 +5,20 @@ How do make a binary file into a char array
 xxd -i -c 8 /tmp/x_mac.bin > file_with_char_array.c
 
 
+How to convert dec2hex and back in bash (with some help...)
+-----------------------------------------------------------
+ $ echo $((0x15a))
+346
+ $ printf '%d\n' 0x15a
+346
+ $ perl -e 'printf ("%d\n", 0x15a)'
+346
+ $ echo 'ibase=16;obase=A;15A' | bc
+346
+$ printf '%x\n' 346
+15a
+$ perl -e 'printf ("%x\n", 346)'
+15a
+$ echo 'ibase=10;obase=16;346' | bc
+15A
+
