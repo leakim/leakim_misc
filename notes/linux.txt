@@ -8,10 +8,12 @@ xxd -i -c 8 /tmp/x_mac.bin > file_with_char_array.c
 Ethernet bridge
 ---------------
 sudo apt-get install bridge-utils
+sudo ifconfig br0 down
+sudo brctl delbr br0
 sudo brctl addbr br0
 sudo brctl addif br0 eth0
 sudo brctl addif br0 wlan0
+sudo ifconfig br0 0.0.0.0 up
 cd /proc/sys/net/bridge
 for N in bridge-nf-* ; do sudo echo 0 > $N ; done
-
 
