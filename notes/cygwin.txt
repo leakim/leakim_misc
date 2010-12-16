@@ -1,0 +1,16 @@
+vim
+gvim
+mlcscope
+openssh
+subversion
+python
+netcat
+ctags
+colordiff
+curl
+iperf
+ncftp
+astyle
+gcc
+wget
+
