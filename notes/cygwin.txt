@@ -1,16 +1,24 @@
-vim
-gvim
-mlcscope
-openssh
-subversion
-python
-netcat
-ctags
-colordiff
-curl
-iperf
-ncftp
-astyle
-gcc
-wget
+Q: cygcheck -p strings.exe
+A: binutils
 
+Essentials
+----------
+binutils: strings
+astyle
+cmake
+colordiff
+cscope
+ctags
+curl
+gcc
+gvim
+iperf
+mlcscope
+ncftp
+netcat
+openssh
+python
+ssh
+subversion
+vim
+wget
