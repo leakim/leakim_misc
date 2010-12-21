@@ -1,0 +1,31 @@
+
+sudo apt-get install miredo
+sudo update-rc.d -f miredo remove
+sudo /etc/init.d/miredo start
+ifconfig teredo
+ping6 -c 4 www.ipv6.org
+ping6 -c 4 ipv6.google.com
+
+
+windows xp
+----------
+cmd.exe
+netsh interface ipv6 install
+netsh interface ipv6 set teredo client
+
+Uninstall
+---------
+cmd.exe
+netsh interface ipv6 uninstall
+
+windows 7
+---------
+
+Uninstall
+---------
+cmd.exe
+netsh
+interface
+teredo
+set state disabled
+
