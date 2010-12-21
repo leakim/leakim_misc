@@ -12,8 +12,14 @@ enable 'allow only loopback connection'
 On linux (VNC Client)
 ---------------------
 install tightVNC
-ssh -N -L 5900:localhost:5900 -p 8022 user@server
+ssh -N -L 5900:localhost:5900 user@server
 wine vncviewer.exe
 
 slow but functional
+
+rdesktop
+--------
+ssh -N -L 3389:localhost:3389 user@server
+rdesktop 127.0.0.1
+
 
