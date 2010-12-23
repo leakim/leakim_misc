@@ -3,14 +3,17 @@ A: binutils
 
 Essentials
 ----------
-binutils: strings
 astyle
+bc
+binutils: strings
 cmake
 colordiff
 cscope
 ctags
 curl
+diffutils
 gcc
+gcc-mingw
 gvim
 iperf
 mlcscope
@@ -18,7 +21,9 @@ ncftp
 netcat
 openssh
 python
+rsync
 ssh
 subversion
 vim
 wget
+
