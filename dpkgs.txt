@@ -69,3 +69,6 @@ kwave
 # KDE hex editor
 okteta
 
+# nice file brower for checking what consumes space (installed by default)
+baobab
+
