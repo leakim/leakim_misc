@@ -72,3 +72,6 @@ okteta
 # nice file brower for checking what consumes space (installed by default)
 baobab
 
+# fun but not really needed
+hwinfo
+
