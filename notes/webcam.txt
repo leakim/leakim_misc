@@ -1,0 +1,2 @@
+mencoder tv:// -tv driver=v4l:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o wcrecording.avi
+

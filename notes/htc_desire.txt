@@ -1,0 +1,37 @@
+bootloader
+----------
+[vol-down]+[power]
+
+enter recovery mode
+[vol-up]+[power]
+
+
+http://wiki.cyanogenmod.com/index.php?title=HTC_Desire_%28GSM%29:_Full_Update_Guide
+---------------------------------------
+Titanium Backup
+Astro file manage
+AppBrain
+SMS Backup&Restore
+Call Logs Backup & Restore
+
+
+HTC Desire update 2.29.405.2
+
+2010-12-19
+----------
+http://liveimage.htc.com/OTA_Bravo_Froyo_HTC_WWE_2.29.405.2-2.10.405.2_R_P_release8gn61bgo3rswcw24.zip
+size: 30MB
+md5sum: 824874c0c71b62f5abcaab94761c6b43
+download:ok
+install:
+
+
+old
+---
+OTA_Bravo_Froyo_HTC_WWE_2.09.405.8-1.21.405.2_release4dua3bcrut4wrv30.zip
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+
+0x0a 10 '\n' LF (NL line feed, new line)
+0x0d 13 '\r' CR (carriage return)
+
+tofrodos: /usr/bin/fromdos
+tofrodos: /usr/bin/todos
+
