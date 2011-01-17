@@ -75,3 +75,7 @@ baobab
 # fun but not really needed
 hwinfo
 
+# examine
+ncc
+valkyrie
+

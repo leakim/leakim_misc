@@ -22,4 +22,8 @@ rdesktop
 ssh -N -L 3389:localhost:3389 user@server
 rdesktop 127.0.0.1
 
+X11 from windows to linux
+-------------------------
+Xming - X11 server for windows
+
 
