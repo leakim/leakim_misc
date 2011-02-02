@@ -1,6 +1,7 @@
+"NoBeaconsAckPResp" !(wlan.fc.type_subtype == 0x08) && !(wlan.fc.type_subtype == 0x1d) && !(wlan.fc.type_subtype == 0x05)
+"NoBeaconProbesAckNull" (!(wlan.fc.type_subtype == 0x08) && !(wlan.fc.type_subtype == 0x04) && !(wlan.fc.type_subtype == 0x05) && !(wlan.fc.type_subtype == 0x1d) && !(wlan.fc.type_subtype == 0x24))
 "AuthAssocEapol" ((wlan.fc.type_subtype == 0x0b) || (wlan.fc.type_subtype == 0x00) || (wlan.fc.type_subtype == 0x01)) || (wlan.fc.type_subtype == 0x0c) || eapol
 "IBSS_DATA_BEACON" ((wlan_mgt.fixed.capabilities.ibss == 1) && (wlan.fc.type_subtype == 0x08)) || ((wlan.fc.ds == 0x00)&&(wlan.fc.type_subtype == 0x20))
 "mcast dst" eth.dst[0] == 1 && eth.dst[1] == 0 && eth.dst[2]  == 5e
 "MgmtFramesButNoBeaconProbesAckNull" ((wlan.fc.type == 0) && (!(wlan.fc.type_subtype == 0x08) && !(wlan.fc.type_subtype == 0x04) && !(wlan.fc.type_subtype == 0x05) && !(wlan.fc.type_subtype == 0x1d) && !(wlan.fc.type_subtype == 0x24))) || eapol 
-"NoBeaconProbesAckNull" (!(wlan.fc.type_subtype == 0x08) && !(wlan.fc.type_subtype == 0x04) && !(wlan.fc.type_subtype == 0x05) && !(wlan.fc.type_subtype == 0x1d) && !(wlan.fc.type_subtype == 0x24))
 "ProbeReq" wlan.fc.type_subtype == 0x04
