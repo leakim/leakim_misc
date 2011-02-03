@@ -5,3 +5,4 @@
 "mcast dst" eth.dst[0] == 1 && eth.dst[1] == 0 && eth.dst[2]  == 5e
 "MgmtFramesButNoBeaconProbesAckNull" ((wlan.fc.type == 0) && (!(wlan.fc.type_subtype == 0x08) && !(wlan.fc.type_subtype == 0x04) && !(wlan.fc.type_subtype == 0x05) && !(wlan.fc.type_subtype == 0x1d) && !(wlan.fc.type_subtype == 0x24))) || eapol 
 "ProbeReq" wlan.fc.type_subtype == 0x04
+"Power-Save poll" wlan.fc.type_subtype == 0x1a
