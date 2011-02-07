@@ -6,3 +6,4 @@
 "MgmtFramesButNoBeaconProbesAckNull" ((wlan.fc.type == 0) && (!(wlan.fc.type_subtype == 0x08) && !(wlan.fc.type_subtype == 0x04) && !(wlan.fc.type_subtype == 0x05) && !(wlan.fc.type_subtype == 0x1d) && !(wlan.fc.type_subtype == 0x24))) || eapol 
 "ProbeReq" wlan.fc.type_subtype == 0x04
 "Power-Save poll" wlan.fc.type_subtype == 0x1a
+"WPS_Configured" (wlan.fc.type_subtype == 0x05) && (wps.wifi_protected_setup_state == 0x02)
