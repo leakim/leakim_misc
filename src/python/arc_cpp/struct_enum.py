@@ -1,73 +1,134 @@
 #!/usr/bin/python
 
-import struct
-import sys
-import re
-
 from optparse import OptionParser
+from shutil import move
+from os import remove
 
-#f.flush()
-#f.seek(offset)
-#f.tell()
+def indent_none(l):
+   s = l
+   while len(s) > 0 and s[0] == '\t':
+      s = s[1:]
+   return s
 
-def is_def(l):
+def indent_one(l):
+   s = l
+   while len(s) > 1 and s[0] == '\t' and s[1] == '\t':
+      s = s[1:]
+   return s
+
+def index_of_def(l):
    s = l.strip().split()
-   if len(s) > 4:
-      return False
-
+   i = 0
    for f in s:
       if f == "struct":
-         return True
+         return i
       if f == "enum":
-         return True
+         return i
       if f == "union":
-         return True
-   return False
+         return i
+      i += 1
+   return -1
+
+def index_of_S(l):
+   s = l.strip().split()
+   i = 0
+   for f in s:
+      if f.find('{') > -1:
+         return i
+      i += 1
+   return -1
+
+def is_def(l):
+   i = index_of_def(l)
+   if i == -1:
+      return False
+   if i > 1:
+      return False
+   return True
 
 class S:
-   type0 = False
-   name0 = None
-   type0name = None
+   # struct my_struct_s {} my_struct;
+   # type0 decl body name (end);
+   decl = None # "my_struct_s"
+   name0 = None # "*name[10]"
+   name = None # "name"
+   type0 = False # struct | union | enum
+   struct_packed = ''
    start = 0
    end = 0
    l = ""
-   def get_name(self):
-      return self.name0
-   def get_type(self):
-      return self.type0
-   def get_typename(self):
-      return self.type0name
-   def get_orig(self):
-      return self.l
-   def get_h(self):
-      s = ""
-      if self.type0name:
-         s += "def: " + self.type0name + " "
-      if self.name0:
-         s += "name: " + self.name0 + " "
-      return s
+   body = "" # { ... }
    def __init__(self, start, l):
       self.start = start
       f = l.strip().split()
       if is_def(l):
-         self.type0 = True
-         if len(f)>2:
-            self.type0name = f[1]
+         #type0 = (struct|union|enum)
+         self.type0 = f[index_of_def(l)]
+         if index_of_def(l) + 2 == index_of_S(l):
+            #decl = "my_struct_s"
+            self.decl = f[index_of_def(l)+1]
       else:
          self.type0 = None
-      if len(f) > 1:
-         self.name0 = f[1]
-      self.l = l
-   def end(self, fd, l):
+      i = l.find('{')
+      if i != -1:
+         self.body = l[i:]
+
+   def last_line(self, fd, l, parent):
+      if self.type0 == None:
+         return
+      i = l.find('}')
+      i += 1 # include '}'
+      self.body += l[0:i]
       self.end = fd.tell()
-      if self.type0:
-         f = l.strip().split()
-         if len(f) > 1:
-            self.name0 = f[1]
-      self.l += l
+      f = l[i:].strip().split()
+      if -1 != l.find('STRUCT_PACKED'):
+         self.struct_packed = ' STRUCT_PACKED'
+         f = f[1:] # strip 'STRUCT_PACKED'
+      if len(f) >= 1:
+         name = f[0]
+         name = name[0:name.find(';')]
+         self.name0 = name
+         if name.find('[') != -1:
+            name = name[0:name.find('[')]
+         if name.find('*') != -1:
+            name = name[name.find('*'):]
+         self.name = name
+
+      self.tostring()
+
+      if self.decl == None:
+         self.decl = self.name + "_in_" + parent + "_" + self.type0[0:1]
 
    def append(self, l):
-      self.l += l
+      self.body += l
+
+   def get_decl(self):
+      if self.type0 == None:
+         return "MISSING_type0"
+      if self.decl == None:
+         return "MISSING_decl"
+      if self.name == None:
+         return "MISSING_name"
+      return self.type0 + " " + self.decl + " " + self.name0 + ";"
+   def get_typedef(self):
+      #b = self.body.replace('\n',' ').strip().replace('\t',' ').replace('   ',' ')
+      b = self.body
+      return self.type0 + " " + self.decl + " " + b + self.struct_packed + ";"
+   def tostring(self):
+      print "-----MIWI----"
+      print "type0: '%s'" % self.type0
+      print "decl:  '%s'" % self.decl
+      print "name:  '%s'" % self.name
+      print "start:  %d" % (self.start)
+      print "stop:   %d" % (self.end)
+      if self.type0:
+         if self.decl:
+            if self.name:
+               print "----- decl will be ----"
+               print self.get_decl()
+               print "----- typedef will be ----"
+               print self.get_typedef()
+
 
 def is_start(l):
    if l.find('{') > -1:
@@ -75,36 +136,120 @@ def is_start(l):
    return False
 
 def is_end(l):
-   for f in l.split():
-      if f == "}":
-         return True
-      if f == "};":
-         return True
+   if l.find('}') > -1:
+      return True
    return False
+#   for f in l.strip().split():
+#      if f == "}":
+#         return True
+#      if f == "};":
+#         return True
+#   return False
 
 def modify_and_swap(n,m,f,options):
-   p = m[0]
-   print "modify_and_swap"
-   print p.type0
-   print p.name0
-   print p.type0name
-   print p.start
-   print p.end
-   print p.l
-   #print p.l
-   print "move this one up"
-   print n.type0
-   print n.name0
-   print n.type0name
-   print n.start
-   print n.end
-   print n.l
+   print "-----MIWI----"
+   print "type0: '%s'" % n.type0
+   print "decl:  '%s'" % n.decl
+   print "name:  '%s'" % n.name
+   print "----- decl will be ----"
+   print n.get_decl()
+   print "----- typedef will be ----"
+   print n.get_typedef()
+   print "replace %d-%d" % (n.start,n.end)
+   print "insert typedef at %d" % (m.start)
 
-name0 = None
-mode = None
-m = []
-n = None
-count = 0
+   fin = open(options.infile,'r')
+   fout = open("/tmp/asdf.h",'w')
+
+   fout.write(fin.read(m.start))
+   fout.write(n.get_typedef())
+   fout.write("\n")
+
+   fout.write(fin.read(n.start-m.start))
+
+   fin.seek(n.end)
+   fout.write("\t/* GENERATED */\n")
+   fout.write("\t")
+   fout.write(n.get_decl())
+   fout.write("\n\n")
+
+   again = True
+   while again:
+      d = fin.read(1000)
+      if len(d) > 0:
+         fout.write(d)
+      else:
+         again=False
+   fin.close()
+   fout.flush()
+   fout.close()
+
+   remove(options.infile)
+   move("/tmp/asdf.h",options.infile)
+
+
+
+
+def search_and_mod(options):
+   fd = None
+   m = None
+   n = None
+   line_count = 0
+   b_count = 0
+   fd = open(options.infile,'r')
+   if fd == None:
+      exit(3)
+   while True:
+      start = fd.tell()
+      line = fd.readline()
+      line_count += 1
+      l = line.strip()
+      f = l.split()
+      start_or_end = False
+
+      if is_start(l):
+         b_count += 1
+         print "%d: line_count %d" % (b_count,line_count)
+         if m == None:
+            m = S(start,line)
+            start_or_end = True
+         else:
+            if n == None:
+               n = S(start,line)
+               start_or_end = True
+
+      if is_end(l):
+         b_count -= 1
+         print "%d: line_count %d" % (b_count,line_count)
+         if b_count == 0:
+            n = None
+            m = None
+         if b_count == 1:
+            start_or_end = True
+            if m and n:
+               print "PARENT:"
+               m.tostring()
+               n.last_line(fd, indent_none(line), m.decl)
+               print "CHILD:"
+               n.tostring()
+               if n.type0:
+                  if m:
+                     # SAVE
+                     fd.close()
+                     fd = None
+                     b_count = 0
+                     modify_and_swap(n,m,f,options)
+                     return True
+            n = None
+
+      if start_or_end == False and (b_count > 0):
+         if n:
+            n.append(indent_one(line))
+
+      if len(line) == 0:
+         return False
+
+
 
 parser = OptionParser()
 parser.add_option("-i", "--infile", dest="infile", 
@@ -123,40 +268,18 @@ if options.infile == None:
    exit(1)
 else:
    print "reading from %s" % (options.infile)
-   fd = open(options.infile,'rw')
 
-#try:
-while True:
-   start = fd.tell()
-   line = fd.readline()
-   l = line.strip()
-   f = l.split()
-   count += 1
+mod_count = 0
+keep_running = True
+while keep_running:
+   again = search_and_mod(options)
+   if again:
+      mod_count += 1
+   else:
+      keep_running = False
 
-   if is_start(l):
-      #print "DEBUG: start: %s" % l
-      if n:
-         m.append(n)
-      n = S(start,line)
-      continue
+   #if mod_count > 2:
+   #   exit(3210)
 
-   if is_end(l):
-      #print "DEBUG: end: %s" % l
-      n.end(fd,line)
-      s = n.get_orig()
-      if n.type0:
-         # SAVE
-         if len(m) > 0:
-            print "MIWI: def in def start ----------- %s " % n.get_h()
-            print s
-            print "MIWI: def in def end -------------"
-            modify_and_swap(n,m,f,options.infile)
-            exit(2)
-      n = None
-      if len(m) > 0:
-         n = m.pop()
-      continue
-
-   if n:
-      n.append(line)
+print "all done %d mods done" % mod_count
 
