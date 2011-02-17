@@ -1,0 +1,28 @@
+revert
+------
+(use --dry-run if unsure)
+svn merge -r501:500
+svn ci -m "revert r501"
+
+conflicts
+---------
+svn resolved baz1
+svn resolved baz2
+svn ci -m "oops. bad merge. will revert."
+
+merge
+-----
+svn merge url://2/trunk url://1/branch 
+svn ci -m "merge branch with trunk"
+
+Merging Using the SVN Command line
+----------------------------------
+1. Find the revision number of the last merge:
+   svn log --verbose --stop-on-copy http://svn.openmrs.org/openmrs/trunk
+2. Done from the trunk directory
+3. Merge trunk & branch xxx from that merge to the latest revision:
+   svn merge -r 341:HEAD http://svn.openmrs.org/openmrs/branches/xxx
+4. ...examine the diffs, compile, test, etc...
+5. Use a descriptive commit description for future ease:
+   svn commit -m "Merged branch xxx changes rev:671 - rev:722 into the trunk."
+
