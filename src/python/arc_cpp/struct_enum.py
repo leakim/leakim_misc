@@ -53,7 +53,7 @@ class S:
    name0 = None # "*name[10]"
    name = None # "name"
    type0 = False # struct | union | enum
-   struct_packed = ''
+   struct_packed = False
    start = 0
    end = 0
    l = ""
@@ -72,17 +72,23 @@ class S:
       i = l.find('{')
       if i != -1:
          self.body = l[i:]
+      j = self.body.find('}')
+      if j != -1:
+         self.body = self.body[:j] # do not include '}'
+
+      self.tostring("FIRST LINE")
 
    def last_line(self, fd, l, parent):
       if self.type0 == None:
          return
       i = l.find('}')
       i += 1 # include '}'
-      self.body += l[0:i]
+      #self.body += l[0:i]
+      self.body += '}'
       self.end = fd.tell()
       f = l[i:].strip().split()
       if -1 != l.find('STRUCT_PACKED'):
-         self.struct_packed = ' STRUCT_PACKED'
+         self.struct_packed = True
          f = f[1:] # strip 'STRUCT_PACKED'
       if len(f) >= 1:
          name = f[0]
@@ -94,10 +100,10 @@ class S:
             name = name[name.find('*'):]
          self.name = name
 
-      self.tostring()
-
       if self.decl == None:
          self.decl = self.name + "_in_" + parent + "_" + self.type0[0:1]
+
+      self.tostring("LAST LINE")
 
    def append(self, l):
       self.body += l
@@ -113,14 +119,19 @@ class S:
    def get_typedef(self):
       #b = self.body.replace('\n',' ').strip().replace('\t',' ').replace('   ',' ')
       b = self.body
-      return self.type0 + " " + self.decl + " " + b + self.struct_packed + ";"
-   def tostring(self):
-      print "-----MIWI----"
+      if self.struct_packed:
+         return "STRUCT_PACKED_START " + self.type0 + " " + self.decl + " " + b + " STRUCT_PACKED_END " + ";"
+      else:
+         return self.type0 + " " + self.decl + " " + b + ";"
+   def tostring(self, title):
+      print "----- %s ----" % title
       print "type0: '%s'" % self.type0
       print "decl:  '%s'" % self.decl
       print "name:  '%s'" % self.name
+      print "name0: '%s'" % self.name0
       print "start:  %d" % (self.start)
       print "stop:   %d" % (self.end)
+      print "body:   SSS%sEEE" % (self.body.replace('\n',' '))
       if self.type0:
          if self.decl:
             if self.name:
@@ -128,6 +139,7 @@ class S:
                print self.get_decl()
                print "----- typedef will be ----"
                print self.get_typedef()
+               print "----- typedef done ----"
 
 
 def is_start(l):
@@ -147,16 +159,16 @@ def is_end(l):
 #   return False
 
 def modify_and_swap(n,m,f,options):
-   print "-----MIWI----"
-   print "type0: '%s'" % n.type0
-   print "decl:  '%s'" % n.decl
-   print "name:  '%s'" % n.name
-   print "----- decl will be ----"
-   print n.get_decl()
-   print "----- typedef will be ----"
-   print n.get_typedef()
-   print "replace %d-%d" % (n.start,n.end)
-   print "insert typedef at %d" % (m.start)
+#   print "-----MIWI----"
+#   print "type0: '%s'" % n.type0
+#   print "decl:  '%s'" % n.decl
+#   print "name:  '%s'" % n.name
+#   print "----- decl will be ----"
+#   print n.get_decl()
+#   print "----- typedef will be ----"
+#   print n.get_typedef()
+#   print "replace %d-%d" % (n.start,n.end)
+#   print "insert typedef at %d" % (m.start)
 
    fin = open(options.infile,'r')
    fout = open("/tmp/asdf.h",'w')
@@ -227,11 +239,9 @@ def search_and_mod(options):
          if b_count == 1:
             start_or_end = True
             if m and n:
-               print "PARENT:"
-               m.tostring()
+               m.tostring("PARENT")
                n.last_line(fd, indent_none(line), m.decl)
-               print "CHILD:"
-               n.tostring()
+               n.tostring("CHILD")
                if n.type0:
                   if m:
                      # SAVE
