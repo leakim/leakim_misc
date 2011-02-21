@@ -21,6 +21,10 @@ main(int argc, char **argv)
 #else
    int enable = 1; // Allow looping through the kernel
 #endif
+   char *opt = NULL;
+   
+   if(argc==3)
+      opt = argv[3];
 
    sd = socket(AF_INET, SOCK_DGRAM, 0);
    if (sd < 0) {
@@ -30,6 +34,11 @@ main(int argc, char **argv)
 
    if (setsockopt(sd, IPPROTO_IP, IP_MULTICAST_LOOP, &enable, sizeof enable) < 0) {
       perror("IP_MULTICAST_LOOP");
+   }
+
+   if(opt)
+   if (setsockopt(sd, SOL_SOCKET, SO_BINDTODEVICE, opt, strlen(opt)) < 0) {
+      perror("SO_BINDTODEVICE");
    }
 
    if (argc < 2) {
