@@ -7,3 +7,4 @@
 "ProbeReq" wlan.fc.type_subtype == 0x04
 "Power-Save poll" wlan.fc.type_subtype == 0x1a
 "WPS_Configured" (wlan.fc.type_subtype == 0x05) && (wps.wifi_protected_setup_state == 0x02)
+"P2PScan" (((wlan.fc.type_subtype == 0x04) || (wlan.fc.type_subtype == 0x05)) && (wlan.bssid == ff:ff:ff:ff:ff:ff) && (wlan_mgt.tag.number == 221) && (wlan_mgt.tag.oui == 50:6f:9a) && (wlan_mgt.tag.oui == 00:50:f2))
