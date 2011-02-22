@@ -1,0 +1,67 @@
+wlan2 up
+wlan2 scan complete
+starting supplicant on wlan2
+p2p_flush
+p2p_find
+wait for p2p peer on wlan2
+wait for p2p peer on wlan1
+MAC: d8:5d:4c:96:1c:2f
+wait for flags=[REPORTED]
+sudo ./wpa_cli -i wlan1 p2p_peer d8:5d:4c:96:1c:2f > /tmp/wpa_cli_wlan1
+flags=[PROBE_REQ_ONLY]
+flags=[PEER_WAITING_RESPONSE]
+flags=[PEER_WAITING_RESPONSE]
+flags=[PEER_WAITING_RESPONSE]
+flags=[PEER_WAITING_RESPONSE]
+flags=[PEER_WAITING_RESPONSE]
+flags=[PEER_WAITING_RESPONSE]
+flags=[PEER_WAITING_RESPONSE]
+p2p_connect d8:5d:4c:96:1c:2f pbc
+d8:5d:4c:96:1c:2f
+age=0
+listen_freq=2412
+level=1
+wps_method=not-ready
+interface_addr=00:00:00:00:00:00
+member_in_go_dev=00:00:00:00:00:00
+member_in_go_iface=00:00:00:00:00:00
+pri_dev_type=1-0050F204-1
+device_name=miwi2-AR9170-p2p
+config_methods=0x188
+dev_capab=0x23
+group_capab=0x0
+go_neg_req_sent=0
+go_state=unknown
+dialog_token=0
+intended_addr=00:00:00:00:00:00
+country=XX
+oper_freq=0
+req_config_methods=0x0
+flags=[REPORTED][PEER_WAITING_RESPONSE]
+status=1
+wait_count=0
+invitation_reqs=0
+monitor changes on wlan1:d8:5d:4c:96:1c:2f
+d8:5d:4c:96:1c:2f
+listen_freq=2412
+level=1
+wps_method=not-ready
+interface_addr=00:00:00:00:00:00
+member_in_go_dev=00:00:00:00:00:00
+member_in_go_iface=00:00:00:00:00:00
+pri_dev_type=1-0050F204-1
+device_name=miwi2-AR9170-p2p
+config_methods=0x188
+dev_capab=0x23
+group_capab=0x0
+go_neg_req_sent=0
+go_state=local
+dialog_token=1
+intended_addr=d8:5d:4c:96:1c:2f
+country=XX
+oper_freq=0
+req_config_methods=0x0
+flags=[REPORTED][PEER_WAITING_RESPONSE]
+status=0
+wait_count=0
+invitation_reqs=0
