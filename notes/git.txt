@@ -5,7 +5,15 @@ ssh git@github.com
 
 download
 --------
-?
+(rw)
+git clone git@github.com:leakim/leakim_misc.git
+(ro)
+git clone git://github.com/leakim/leakim_misc.git
+git clone https://github.com/leakim/leakim_misc.git
+
+info
+----
+cat .git/config
 
 upload
 ------
