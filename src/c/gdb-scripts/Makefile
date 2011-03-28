@@ -4,6 +4,8 @@
 CFLAGS=-g -Wall
 LDFLAGS=-g -lduma
 
+.PHONY: clean run
+
 all: test run
 
 clean:
@@ -12,5 +14,5 @@ clean:
 test: test.o
 
 run:
-	./test
+	gdb ./test -x run.gdb
 
