@@ -60,6 +60,9 @@ export GREP_OPTIONS='--binary-files=without-match --exclude=tags --exclude=cscop
 
 alias iwgrep='agrep -d Cell '
 
+# quiet and fast startup (skip reading init files)
+alias octave='octave -qf'
+
 export HISTCONTROL=ignoredups
 export HISTSIZE=2500
 export EDITOR=vim
