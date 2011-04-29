@@ -12,8 +12,9 @@ svn ci -m "oops. bad merge. will revert."
 
 merge
 -----
-svn merge url://2/trunk url://1/branch 
-svn ci -m "merge branch with trunk"
+cd branch_that_I_will_merge_trunk_into/
+svn merge url://trunk
+svn ci -m "merge trunk into my branch"
 
 Merging Using the SVN Command line
 ----------------------------------
