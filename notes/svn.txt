@@ -27,3 +27,11 @@ Merging Using the SVN Command line
 5. Use a descriptive commit description for future ease:
    svn commit -m "Merged branch xxx changes rev:671 - rev:722 into the trunk."
 
+Using git-svn
+-------------
+git svn init <svn url>
+git svn fetch
+git svn rebase
+git commit <changes>
+git svn dcommit // push git changes back to subversion
+
