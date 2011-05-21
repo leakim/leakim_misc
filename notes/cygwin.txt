@@ -26,4 +26,5 @@ ssh
 subversion
 vim
 wget
+mc
 
