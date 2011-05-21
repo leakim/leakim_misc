@@ -35,3 +35,18 @@ git svn rebase
 git commit <changes>
 git svn dcommit // push git changes back to subversion
 
+# -s for standard trunk/branches/tags dir structure
+git-svn clone -s http://example.com/my_subversion_repo local_dir
+git checkout -b new_branch_name [old_branch_name]
+git add --patch
+git checkout <filename> # eq to svn revert
+git reset HEAD <filename>
+git checkout master
+git merge <feature_branch>
+git merge --squash <feature_branch> # squash all commits into one svn commit
+git-svn rebase
+git-svn dcommit
+
+
+
+
