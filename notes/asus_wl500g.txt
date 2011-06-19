@@ -1,0 +1,49 @@
+Asus WL-500G Premium
+--------------------
+
+* Unplug power to the router
+* Make a wired ethernet connection from LAN port #1 to your computer's ethernet port. 
+* Depress and hold the RESTORE button on the back of the router and return power to the router. 
+* Hold the RESTORE button until the power indicator on the front of the router begins to blink slowly. 
+(The router is now in diag mode.)
+
+wget http://downloads.openwrt.org/backfire/10.03.1-rc4/brcm-2.4/openwrt-brcm-2.4-squashfs.trx
+sudo ifconfig eth0 192.168.1.2
+atftp 192.168.1.1
+tftp> trace
+tftp> binary   [Depending on your version of TFTP, ensure binary mode.]
+tftp> put openwrt-brcm-2.4-squashfs.trx
+tftp> quit
+
+wait
+
+(reboot after ...8... minutes)
+
+telnet 192.168.1.1
+passwd
+exit
+ssh root@192.168.1.1
+
+USB/Printer support
+-------------------
+use web interface and install
+
+kmod-usb-core
+kmod-usb-storage
+kmod-usb-printer
+kmod-usb-uhci 
+kmod-fs-vfat
+p910nd
+
+vim /etc/cat config/p910nd 
+config p910nd
+   option device        /dev/usb/lp0
+   option port          0
+   option bidirectional 1
+   option enabled       1
+
+cd /etc/rc.d
+ln -s /etc/init.d/p910nd S98p910nd
+
+reboot AP
+
