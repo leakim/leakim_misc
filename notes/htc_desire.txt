@@ -32,6 +32,18 @@ OTA_Bravo_Froyo_HTC_WWE_2.09.405.8-1.21.405.2_release4dua3bcrut4wrv30.zip
 
 
 
+AUDIO: 48000 Hz, 2 ch, s16le, 127.9 kbit/8.33% (ratio: 15992->192000)
+AUDIO: 44100 Hz, 2 ch, s16le, 111.8 kbit/7.92% (ratio: 13976->176400)
+(AAC)
 
-
+VIDEO:  [MP4V]  624x352  24bpp  25.000 fps  710.5 kbps (86.7 kbyte/s)
+(mpeg4)
+VIDEO:  [H264]  480x260  24bpp  23.976 fps  383.0 kbps (46.8 kbyte/s)
+1 450x270
+1 480x202
+1 720x304
+2 480x200
+2 480x270
+4 480x260
+4 480x204
 
