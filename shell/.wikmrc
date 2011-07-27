@@ -27,6 +27,10 @@ function Sum() {
    awk '{sum = sum + $1} END {print "Sum: ",sum}'
 }
 
+function tdiff() {
+   awk 'func isnum(x){return(x==x+0.0)} func is_ts(x){if(x ~ /^[0-9]*[.][0-9]*/) return isnum(x); return 0} BEGIN{N=0}{if(is_ts($1)) {printf "%f %s\n", $1-N, $0; N=$1} else { print $0}}'
+}
+
 # time lame -b64 -h in.mp3 out.mp3
 function mp3tom4b() {
    mpg123 -s "$3" | faac -b 80 -P -X -w -C 1 -o "$4" --title "$2" --writer "$1" --artist "$1" --disc 1 -
