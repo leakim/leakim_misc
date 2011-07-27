@@ -54,6 +54,7 @@ alias cvsupdate="cvs update -P -C -d"
 
 alias qpl='quickplot --line-width=0 --no-points'
 alias qpp='quickplot --no-lines --point-size=1'
+alias ack=ack-grep
 
 export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
@@ -61,7 +62,6 @@ alias ls='ls $LS_OPTIONS'
 
 export GREP_OPTIONS='--binary-files=without-match --exclude=tags --exclude=cscope.out --exclude-dir=.svn --exclude-dir=.git'
 #alias grep='grep --exclude=tags --exclude=cscope.out --exclude-dir=.svn --exclude-dir=.git'
-
 alias iwgrep='agrep -d Cell '
 
 # quiet and fast startup (skip reading init files)
@@ -129,4 +129,18 @@ function sniff() {
    sudo chmod a+rw "$OUTFILE"
    sudo tshark -i $SIF -w "$OUTFILE"
 }
+
+
+function wlist() {
+   FILE="$1"
+
+   if [ "x$1" == "x" ]; then
+      FILE="/tmp/air.pcap"
+   fi
+   echo "reading from: $FILE"
+
+   tshark -q -X lua_script:/home/miwi/leakim_misc/src/lua/wlan/wlan_list_ap_sta.lua -r "$FILE"
+}
+
+alias wfilter='/home/miwi/leakim_misc/shell/wlan_filter_sta.sh'
 
