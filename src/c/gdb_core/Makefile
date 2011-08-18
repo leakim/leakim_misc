@@ -1,7 +1,7 @@
 
 # To generate 'core' files you must first have issued
 #
-# ulimit -c unlimite
+# ulimit -c unlimited
 #
 # to change the 'core' filename to something that is less likly to be overwritten issue
 # 
