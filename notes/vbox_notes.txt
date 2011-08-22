@@ -23,3 +23,7 @@ Change Disk UUID
 ----------------
 VBoxManage internalcommands setvdiuuid WinXP.vdi
 
+Network
+-------
+WinXP - Intel PRO/1000 T Server Adapter
+
