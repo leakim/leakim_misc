@@ -2,12 +2,14 @@
 CFLAGS=-g
 LDFLAGS=-g
 
-all: server test
+all: server cli_server_cli
 
 main:
+
+cli_server_cli: cli_server.c cli_server_cli.c
 
 test:
 	./server
 
 clean:
-	rm server
+	rm -rf server cli_server_cli cli_server
