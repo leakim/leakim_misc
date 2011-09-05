@@ -33,6 +33,7 @@ int main()
 
       sleep(1);
       printf(".");
+      fflush(stdout);
    }
 
    return 0;
