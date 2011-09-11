@@ -1,3 +1,9 @@
+
+svn prop...
+...........
+svn propset svn:eol-style native file.c
+svn propget svn:externals
+
 revert
 ------
 (use --dry-run if unsure)
